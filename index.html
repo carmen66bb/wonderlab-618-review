@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>万益蓝 × 腾讯营销 · 618 复盘 + Q3 建议动作</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+body { background: #f5f5f7; padding: 30px 20px; color: #1d1d1f; line-height: 1.6; }
+
+/* === 文档外层容器：把所有 page 合并成一张连续白卡 === */
+.doc-wrap { max-width: 1180px; margin: 0 auto; background: white; border-radius: 16px; box-shadow: 0 2px 24px rgba(0,0,0,0.06); overflow: hidden; }
+
+/* === page 默认改为"段落容器"，无卡片边距、无阴影、紧凑 === */
+.page { padding: 20px 50px; background: white; }
+.page + .page { padding-top: 8px; }
+
+/* === 封面页保留沉浸式独立视觉 === */
+.cover { background: linear-gradient(135deg, #1a3a6c 0%, #2e5a9c 100%); color: white; padding: 44px 50px 36px; }
+.cover .title { color: white; font-size: 30px; margin-bottom: 6px; }
+.cover .subtitle { color: rgba(255,255,255,0.8); }
+
+/* === Part 标题大页（PART 01 / PART 02 那种）保留视觉重量但裁紧 === */
+.part-divider { padding: 40px 50px !important; }
+
+/* === 标题层级 · 字号收一档 + margin 大幅压缩 === */
+.title { font-size: 22px; font-weight: 700; margin-bottom: 6px; color: #1d1d1f; }
+.subtitle { font-size: 13px; color: #86868b; margin-bottom: 16px; }
+.section-tag { display: inline-block; padding: 3px 10px; border-radius: 20px; background: #e3f2fd; color: #1565c0; font-size: 11px; font-weight: 600; margin-bottom: 8px; }
+.h2 { font-size: 19px; font-weight: 700; margin: 18px 0 10px; padding-left: 10px; border-left: 4px solid #1565c0; color: #1d1d1f; line-height: 1.4; }
+.h3 { font-size: 15px; font-weight: 700; margin: 14px 0 8px; color: #1d1d1f; }
+.h4 { font-size: 14px; font-weight: 700; margin: 10px 0 6px; color: #444; }
+p { margin: 8px 0; font-size: 14px; color: #333; }
+.insight-box { background: linear-gradient(135deg, #fff5f0, #fff); border-left: 4px solid #E63946; padding: 18px 22px; margin: 20px 0; border-radius: 6px; }
+.insight-title { font-size: 13px; color: #E63946; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px; }
+.insight-content { font-size: 14px; color: #1d1d1f; line-height: 1.7; }
+.tip-box { background: #f0f7ff; border-left: 4px solid #1565c0; padding: 14px 18px; margin: 14px 0; border-radius: 6px; font-size: 13px; color: #1565c0; }
+.warn-box { background: #fff3e0; border-left: 4px solid #ef6c00; padding: 14px 18px; margin: 14px 0; border-radius: 6px; font-size: 13px; color: #6d4c00; }
+.note { font-size: 12px; color: #86868b; font-style: italic; margin: 8px 0; }
+.tag-strong { display: inline-block; padding: 2px 8px; border-radius: 4px; background: #ffebee; color: #c62828; font-size: 12px; font-weight: 600; margin: 0 4px; }
+.tag-mid { display: inline-block; padding: 2px 8px; border-radius: 4px; background: #fff8e1; color: #ef6c00; font-size: 12px; font-weight: 600; margin: 0 4px; }
+.tag-weak { display: inline-block; padding: 2px 8px; border-radius: 4px; background: #e8f5e9; color: #2e7d32; font-size: 12px; font-weight: 600; margin: 0 4px; }
+.tag-blue { display: inline-block; padding: 2px 8px; border-radius: 4px; background: #e3f2fd; color: #1565c0; font-size: 12px; font-weight: 600; margin: 0 4px; }
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+th { background: #f0f7ff; padding: 10px 12px; text-align: left; font-weight: 600; color: #1d1d1f; border-bottom: 2px solid #1565c0; }
+td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; color: #333; }
+tr:hover td { background: #fafafa; }
+.metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+.metric-card { padding: 22px; border-radius: 10px; color: white; }
+.metric-card .metric-label { font-size: 12px; opacity: 0.9; }
+.metric-card .metric-value { font-size: 30px; font-weight: 700; margin: 8px 0; }
+.metric-card .metric-desc { font-size: 12px; opacity: 0.85; }
+.m-red { background: linear-gradient(135deg, #E63946, #c62828); }
+.m-orange { background: linear-gradient(135deg, #F77F00, #ef6c00); }
+.m-green { background: linear-gradient(135deg, #06A77D, #2e7d32); }
+.m-blue { background: linear-gradient(135deg, #1565c0, #0d47a1); }
+.m-purple { background: linear-gradient(135deg, #7b1fa2, #4a148c); }
+.m-teal { background: linear-gradient(135deg, #00838f, #006064); }
+.image-placeholder { background: repeating-linear-gradient(45deg, #f5f5f7, #f5f5f7 10px, #ebebeb 10px, #ebebeb 20px); border: 2px dashed #c0c0c0; border-radius: 10px; padding: 50px 30px; text-align: center; margin: 20px 0; color: #86868b; }
+.image-placeholder .ph-title { font-size: 15px; font-weight: 700; color: #555; margin-bottom: 6px; }
+.image-placeholder .ph-path { font-size: 12px; color: #86868b; font-family: "SF Mono", Consolas, monospace; }
+.image-placeholder .ph-icon { font-size: 36px; opacity: 0.4; margin-bottom: 12px; }
+.footer { font-size: 11px; color: #999; margin-top: 30px; padding-top: 20px; border-top: 1px solid #f0f0f0; text-align: right; }
+.quote-box { background: #f9f9f9; border-left: 3px solid #999; padding: 14px 18px; margin: 14px 0; font-size: 14px; font-style: italic; color: #555; }
+.action-card { background: white; border: 1px solid #e0e0e0; border-radius: 10px; padding: 20px; margin: 14px 0; transition: all 0.2s; }
+.action-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.08); border-color: #1565c0; }
+.action-card .action-num { display: inline-block; width: 32px; height: 32px; line-height: 32px; text-align: center; background: #1565c0; color: white; border-radius: 50%; font-weight: 700; margin-right: 10px; }
+.action-card .action-title { font-size: 16px; font-weight: 700; display: inline; vertical-align: middle; }
+.tier-S { background: #e8f5e9; color: #1b5e20; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.tier-A { background: #e3f2fd; color: #0d47a1; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.tier-B { background: #fff8e1; color: #6d4c00; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.tier-C { background: #ffe0b2; color: #c25e00; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.tier-D { background: #f4f4f6; color: #6e6e73; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.toc { background: #fafafa; padding: 20px 24px; border-radius: 10px; margin: 24px 0; }
+.toc-item { padding: 6px 0; font-size: 14px; color: #444; }
+.toc-item a { color: #1565c0; text-decoration: none; }
+.toc-item a:hover { text-decoration: underline; }
+.highlight { background: linear-gradient(180deg, transparent 60%, #fff59d 60%); padding: 0 2px; font-weight: 600; }
+
+/* ========= 新增 · 可视化组件 v2.1 ========= */
+
+/* 达人卡片 */
+.kol-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0; }
+.kol-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 18px 0; }
+.kol-card { background: white; border: 1px solid #e8e8ed; border-radius: 12px; padding: 16px; transition: all 0.2s; position: relative; overflow: hidden; }
+.kol-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.kol-card .kol-tier-bar { position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+.kol-card.tier-bar-s .kol-tier-bar { background: linear-gradient(90deg, #06A77D, #2e7d32); }
+.kol-card.tier-bar-a .kol-tier-bar { background: linear-gradient(90deg, #1565c0, #0d47a1); }
+.kol-card.tier-bar-b .kol-tier-bar { background: linear-gradient(90deg, #f9a825, #ef6c00); }
+.kol-card.tier-bar-c .kol-tier-bar { background: linear-gradient(90deg, #ef6c00, #c25e00); }
+.kol-card.tier-bar-d .kol-tier-bar { background: linear-gradient(90deg, #E63946, #c62828); }
+.kol-avatar { width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #f5f5f7, #e0e0e0); display: inline-flex; align-items: center; justify-content: center; font-size: 22px; color: #999; margin-right: 12px; vertical-align: middle; flex-shrink: 0; }
+.kol-head { display: flex; align-items: center; margin-bottom: 12px; margin-top: 4px; }
+.kol-name { font-size: 14px; font-weight: 700; color: #1d1d1f; }
+.kol-product { font-size: 12px; color: #86868b; margin-top: 2px; }
+.kol-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.kol-metric { background: #fafafa; padding: 8px 10px; border-radius: 6px; }
+.kol-metric .ml { font-size: 10px; color: #86868b; }
+.kol-metric .mv { font-size: 15px; font-weight: 700; color: #1d1d1f; margin-top: 2px; }
+.kol-cpm-big { font-size: 22px; font-weight: 700; }
+.kol-cpm-big.s { color: #06A77D; }
+.kol-cpm-big.a { color: #1565c0; }
+.kol-cpm-big.b { color: #ef6c00; }
+.kol-cpm-big.c { color: #c25e00; }
+.kol-cpm-big.d { color: #E63946; }
+.kol-badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 600; margin-left: 6px; }
+.kol-badge.replay { background: #e3f2fd; color: #0d47a1; }
+.kol-badge.new { background: #fff3e0; color: #ef6c00; }
+.kol-badge.live { background: #fce4ec; color: #c2185b; }
+
+/* 散点图（SVG） */
+.scatter-wrap { background: #fafafa; border-radius: 10px; padding: 24px 20px 16px; margin: 18px 0; border: 1px solid #ececf0; }
+.scatter-title { font-size: 14px; font-weight: 700; color: #1d1d1f; margin-bottom: 4px; }
+.scatter-sub { font-size: 12px; color: #86868b; margin-bottom: 14px; }
+.scatter-legend { display: flex; gap: 16px; font-size: 11px; color: #555; margin-top: 12px; flex-wrap: wrap; }
+.scatter-legend span { display: inline-flex; align-items: center; }
+.scatter-legend .dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; display: inline-block; }
+.scatter-axis-label { font-size: 11px; fill: #86868b; }
+.scatter-grid { stroke: #e8e8ed; stroke-width: 1; }
+.scatter-zone-bg { opacity: 0.06; }
+.scatter-zone-label { font-size: 10px; font-weight: 600; opacity: 0.45; }
+
+/* 五梯队热力分布带 */
+.tier-band { display: flex; height: 64px; border-radius: 10px; overflow: hidden; margin: 18px 0; box-shadow: inset 0 0 0 1px #ececf0; }
+.tier-seg { display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; font-weight: 700; transition: flex 0.3s; }
+.tier-seg.s { background: linear-gradient(135deg, #06A77D, #2e7d32); }
+.tier-seg.a { background: linear-gradient(135deg, #1565c0, #0d47a1); }
+.tier-seg.b { background: linear-gradient(135deg, #f9a825, #ef6c00); }
+.tier-seg.c { background: linear-gradient(135deg, #ef6c00, #c25e00); }
+.tier-seg.d { background: linear-gradient(135deg, #8e8e93, #636366); }
+.tier-seg .t-name { font-size: 16px; }
+.tier-seg .t-detail { font-size: 11px; opacity: 0.9; font-weight: 400; margin-top: 2px; }
+.tier-budget-band { display: flex; height: 36px; border-radius: 8px; overflow: hidden; margin: 8px 0 18px; box-shadow: inset 0 0 0 1px #ececf0; }
+.tier-budget-band .seg { display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: 600; }
+.tier-budget-band .seg.s { background: linear-gradient(135deg, #06A77D, #2e7d32); }
+.tier-budget-band .seg.a { background: linear-gradient(135deg, #1565c0, #0d47a1); }
+.tier-budget-band .seg.b { background: linear-gradient(135deg, #f9a825, #ef6c00); }
+.tier-budget-band .seg.c { background: linear-gradient(135deg, #ef6c00, #c25e00); }
+.tier-budget-band .seg.d { background: linear-gradient(135deg, #8e8e93, #636366); }
+
+/* 2×2 优先级矩阵 */
+.matrix-wrap { position: relative; height: 480px; background: #fafafa; border-radius: 12px; margin: 18px 0; border: 1px solid #ececf0; padding: 24px; }
+.matrix-grid { position: relative; height: 100%; border-left: 2px solid #c0c0c0; border-bottom: 2px solid #c0c0c0; }
+.matrix-axis-x { position: absolute; bottom: -22px; right: 0; font-size: 11px; color: #86868b; }
+.matrix-axis-y { position: absolute; top: 0; left: -22px; font-size: 11px; color: #86868b; transform: rotate(-90deg); transform-origin: top left; white-space: nowrap; }
+.matrix-divider-h { position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dashed #d0d0d5; }
+.matrix-divider-v { position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px dashed #d0d0d5; }
+.matrix-zone { position: absolute; font-size: 10px; color: #999; padding: 6px 10px; font-weight: 600; opacity: 0.5; }
+.matrix-zone.tl { top: 4px; left: 4px; }
+.matrix-zone.tr { top: 4px; right: 4px; }
+.matrix-zone.bl { bottom: 4px; left: 4px; }
+.matrix-zone.br { bottom: 4px; right: 4px; }
+.matrix-bubble { position: absolute; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px; transform: translate(-50%, -50%); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: default; transition: all 0.2s; }
+.matrix-bubble:hover { transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 6px 16px rgba(0,0,0,0.25); }
+.matrix-bubble.b1 { background: linear-gradient(135deg, #E63946, #c62828); }
+.matrix-bubble.b2 { background: linear-gradient(135deg, #1565c0, #0d47a1); }
+.matrix-bubble.b3 { background: linear-gradient(135deg, #F77F00, #ef6c00); }
+.matrix-bubble.b4 { background: linear-gradient(135deg, #06A77D, #2e7d32); }
+.matrix-bubble.b5 { background: linear-gradient(135deg, #7b1fa2, #4a148c); }
+.matrix-bubble.b6 { background: linear-gradient(135deg, #00838f, #006064); }
+.matrix-bubble.b7 { background: linear-gradient(135deg, #d81b60, #ad1457); }
+.matrix-bubble.b8 { background: linear-gradient(135deg, #5d4037, #3e2723); }
+.matrix-label { position: absolute; font-size: 11px; color: #1d1d1f; font-weight: 600; transform: translate(-50%, -50%); margin-top: 38px; text-align: center; width: 110px; line-height: 1.3; }
+
+/* 视觉分页标识 */
+.viz-label { display: inline-block; padding: 4px 10px; border-radius: 4px; background: #6366f1; color: white; font-size: 11px; font-weight: 600; margin-left: 6px; vertical-align: middle; }
+
+/* 商品投入条形图 */
+.bar-chart { margin: 18px 0; }
+.bar-row { display: flex; align-items: center; margin: 10px 0; }
+.bar-label { width: 180px; font-size: 13px; color: #1d1d1f; font-weight: 500; padding-right: 10px; }
+.bar-track { flex: 1; height: 26px; background: #f0f0f5; border-radius: 6px; overflow: hidden; position: relative; }
+.bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding: 0 12px; color: white; font-size: 12px; font-weight: 600; transition: width 0.6s; }
+.bar-fill.s { background: linear-gradient(90deg, #06A77D, #2e7d32); }
+.bar-fill.a { background: linear-gradient(90deg, #1565c0, #0d47a1); }
+.bar-fill.b { background: linear-gradient(90deg, #f9a825, #ef6c00); }
+.bar-fill.c { background: linear-gradient(90deg, #ef6c00, #c25e00); }
+.bar-fill.d { background: linear-gradient(90deg, #E63946, #c62828); }
+.bar-fill.neutral { background: linear-gradient(90deg, #9ca3af, #6b7280); }
+.bar-value { width: 90px; text-align: right; font-size: 13px; color: #1d1d1f; font-weight: 700; padding-left: 12px; }
+</style>
+</head>
+<body>
+
+<div class="doc-wrap">
+
+<!-- ============= 封面 ============= -->
+<div class="page cover">
+<div style="font-size: 12px; opacity: 0.8; margin-bottom: 8px;">WONDERLAB × 腾讯营销</div>
+<div class="title">万益蓝 · 618 / H1 复盘 + Q3 建议动作</div>
+<div class="subtitle">数据周期：2026.01.18 - 2026.06.26 ｜ 7 商品 165.8 万投入 ｜ 33 条视频 29 位达人</div>
+
+<div style="font-size: 11px; opacity: 0.7; margin-top: 18px; text-align: right;">汇报日期：2026 年 6 月 30 日 ｜ 编制：Carmen × 腾讯营销服务团队</div>
+</div>
+
+<!-- ============= Part 1 标题页 ============= -->
+<div class="page" style="background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%); text-align: center; padding: 28px 50px; border-top: 1px solid #ececf0; border-bottom: 1px solid #ececf0;">
+<div style="display: inline-flex; align-items: center; gap: 14px;">
+<span style="font-size: 28px;">📊</span>
+<span style="font-size: 11px; color: #86868b; letter-spacing: 4px;">PART 01</span>
+<span style="font-size: 22px; font-weight: 700; color: #1d1d1f;">618 / H1 复盘</span>
+<span style="font-size: 12px; color: #86868b;">· 三个亮点 · 一个短板 · 五梯队诊断</span>
+</div>
+</div>
+
+<!-- ============= 1.1 亮点 ① ============= -->
+<div class="page">
+<div class="section-tag">1.1 · 亮点 ①</div>
+<div class="title">🎯 漏斗结构健康 · "健康沙漏型"</div>
+<div class="subtitle">近 30 天品牌人群资产分布（2026.05.28 - 2026.06.26）</div>
+
+<table>
+<thead><tr><th>资产层</th><th>万益蓝</th><th>赛道均值</th><th>差距</th><th>判断</th></tr></thead>
+<tbody>
+<tr><td>R1 触达</td><td>41.34%</td><td>44.49%</td><td>-3.15pp</td><td>正常</td></tr>
+<tr><td>R2 回应</td><td><b>45.82%</b></td><td>40.21%</td><td><b>+5.61pp</b></td><td><span class="tag-weak">✅ 高于均值</span></td></tr>
+<tr><td>R3 共鸣</td><td>12.32%</td><td>15.55%</td><td>-3.23pp</td><td><span class="tag-mid">可控短板</span></td></tr>
+<tr><td>R4 行动</td><td><b>0.38%</b></td><td>0.14%</td><td><b>+0.24pp</b></td><td><span class="tag-weak">✅ 高于均值</span></td></tr>
+<tr><td>R5 信赖</td><td><b>0.13%</b></td><td>0.03%</td><td><b>+0.10pp</b></td><td><span class="tag-weak">✅ 高于均值</span></td></tr>
+</tbody>
+</table>
+
+<div style="margin: 18px 0; text-align: center;">
+<img src="贴图/【贴图 ①】5R 资产总量截图 · 近30天.png" alt="5R 资产总量截图" style="max-width: 100%; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 1px solid #ececf0;">
+<div style="font-size: 11px; color: #86868b; margin-top: 8px;">数据来源：如翼后台 · 品牌5R资产 · 近30天</div>
+</div>
+
+<div class="insight-box">
+<div class="insight-title">⚡ 核心判断</div>
+<div class="insight-content">
+R2 / R4 / R5 <b>全部高于赛道均值</b>——意味着用户从"回应"到"行动"再到"信赖"这条路径走得非常顺畅。<br>
+R3 仅落后 3.23pp，是<b>可控短板</b>，将在动作②中给出补足方案。
+</div>
+</div>
+</div>
+
+<!-- ============= 1.1 亮点 ② ============= -->
+<div class="page">
+<div class="section-tag">1.1 · 亮点 ②</div>
+<div class="title">💧 30 天 R3 净增 146 万人 · 沉淀成本 ¥1.13/人</div>
+<div class="subtitle">桑基流转图 · 2026.05.23 - 2026.06.22</div>
+
+<table>
+<thead><tr><th>流转指标</th><th>数据</th><th>vs 赛道均值</th></tr></thead>
+<tbody>
+<tr><td>起浮量</td><td>1,845 万</td><td>-4.42%</td></tr>
+<tr><td>蓄水量（R1/R2 流入）</td><td>1,691 万</td><td><span class="tag-weak">+7.59%</span></td></tr>
+<tr><td><b>种草量（R3 流入）</b></td><td><b>266.88 万</b></td><td><span class="tag-strong">+91.57%</span></td></tr>
+<tr><td>R3 净增（流入-流出）</td><td><b>+146.38 万</b></td><td>—</td></tr>
+<tr><td>R4 净增</td><td>+9.67 万</td><td>—</td></tr>
+<tr><td>R5 净增</td><td>+3.07 万</td><td>—</td></tr>
+</tbody>
+</table>
+
+<div style="margin: 18px 0; text-align: center;">
+<img src="贴图/【贴图 ②】桑基流转图截图 · 5:23-6:22.png" alt="桑基流转图" style="max-width: 100%; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 1px solid #ececf0;">
+<div style="font-size: 11px; color: #86868b; margin-top: 8px;">数据来源：如翼后台 · 5R 桑基流转 · 5/23-6/22</div>
+</div>
+
+<div class="h3">📐 R3 单人沉淀成本测算</div>
+<div class="metric-grid">
+<div class="metric-card m-blue">
+<div class="metric-label">H1 种草总投入</div>
+<div class="metric-value">¥165.8 万</div>
+<div class="metric-desc">7 商品 · 33 视频 · 29 达人</div>
+</div>
+<div class="metric-card m-purple">
+<div class="metric-label">30 天 R3 净增</div>
+<div class="metric-value">146.4 万人</div>
+<div class="metric-desc">流入 - 流出</div>
+</div>
+<div class="metric-card m-red">
+<div class="metric-label">R3 单人沉淀成本</div>
+<div class="metric-value">¥1.13</div>
+<div class="metric-desc">膳食赛道优秀水平</div>
+</div>
+</div>
+
+<div class="insight-box">
+<div class="insight-title">⚡ 核心判断</div>
+<div class="insight-content">
+<b>1.13 元 / 人</b> 的 R3 沉淀成本是膳食赛道的<b>优秀水平</b>——意味着每花 1 元，给品牌带来 1 个长期共鸣用户。<br>
+按行业 R3 用户 12 个月 LTV 测算，资产 ROI 显著为正。
+</div>
+</div>
+</div>
+
+<!-- ============= 1.1 亮点 ③ ============= -->
+<div class="page">
+<div class="section-tag">1.1 · 亮点 ③</div>
+<div class="title">🌐 互选触点占比 17.37% · 赛道范本</div>
+<div class="subtitle">近 30 天触点结构（2026.05.28 - 2026.06.26）</div>
+
+<table>
+<thead><tr><th>触点</th><th>占比</th><th>赛道判断</th></tr></thead>
+<tbody>
+<tr><td>效果竞价</td><td>68.88%</td><td>正常</td></tr>
+<tr><td>品牌竞价</td><td>23.07%</td><td><span class="tag-weak">高于均值</span></td></tr>
+<tr><td><b>互选</b></td><td><b>17.37%</b></td><td><span class="tag-strong">⭐ 赛道范本</span></td></tr>
+<tr><td>其他</td><td>&lt; 1%</td><td>—</td></tr>
+</tbody>
+</table>
+
+<div style="margin: 18px 0; text-align: center;">
+<img src="贴图/【贴图 ③】触点结构截图 · 近30天.png" alt="触点结构截图" style="max-width: 100%; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 1px solid #ececf0;">
+<div style="font-size: 11px; color: #86868b; margin-top: 8px;">数据来源：如翼后台 · 触点结构 · 近30天</div>
+</div>
+
+<div class="insight-box">
+<div class="insight-title">⚡ 核心判断</div>
+<div class="insight-content">
+<b>互选 17.37%</b> 占比在膳食赛道里是<b>少见的"敢于在品牌端持续投入"的客户</b>。<br>
+互选是<b>唯一能给品牌带 R3 资产的版位</b>——这件事万益蓝团队已经做对了。<br>
+品牌竞价 + 互选合计 ≈ 40%，<b>品牌端触点比例远高于行业均值</b>。
+</div>
+</div>
+
+<div class="h3 " style="margin-top: 30px;">⚠️ 短板 · R3 占比仍有 3.23pp 提升空间</div>
+<p>虽然漏斗结构健康，但 R3 占比 12.32% 仍低于赛道均值 15.55%。</p>
+<p><b>主要原因（初判）</b>：</p>
+<ul style="padding-left: 24px; font-size: 14px; color: #333;">
+<li>互选触点中"视频号互选"人群覆盖度 7.82%，赛道均值 27.23%——<b>视频号互选还有较大破圈空间</b></li>
+<li>H1 互选投放在"低 CPM 高观看"达人（年糕妈妈/马姐/茅善玉）和"高 CPM 低观看"达人（李佳念/央视网快看）之间<b>结构分化明显</b>——优化空间清晰</li>
+</ul>
+</div>
+
+<!-- ============= 1.2.0 H1 达人星图（散点图）· 新增 ============= -->
+<div class="page">
+<div class="section-tag">1.2 · 视觉总览 <span class="viz-label">VIZ</span></div>
+<div class="title">⭐ H1 达人星图 · 一图看完 31 条视频</div>
+<div class="subtitle">X 轴：单条 CPM（元）｜ Y 轴：投入金额（元）｜ 气泡大小：观看量</div>
+
+<div class="scatter-wrap">
+<div class="scatter-title">31 条视频在「CPM × 投入金额」上的分布</div>
+<div class="scatter-sub">象限解读：左下=性价比之王 ｜ 左上=高投入高回报 ｜ 右下=低投入但效率差 ｜ 右上=最需复盘</div>
+
+<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+  <!-- 背景四象限 -->
+  <rect x="60" y="20" width="350" height="190" fill="#06A77D" class="scatter-zone-bg"/>
+  <rect x="410" y="20" width="330" height="190" fill="#1565c0" class="scatter-zone-bg"/>
+  <rect x="60" y="210" width="350" height="190" fill="#f9a825" class="scatter-zone-bg"/>
+  <rect x="410" y="210" width="330" height="190" fill="#E63946" class="scatter-zone-bg"/>
+
+  <!-- 网格线 -->
+  <line x1="60" y1="20" x2="60" y2="400" class="scatter-grid"/>
+  <line x1="60" y1="400" x2="740" y2="400" class="scatter-grid"/>
+  <line x1="60" y1="210" x2="740" y2="210" stroke="#c0c0c5" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="410" y1="20" x2="410" y2="400" stroke="#c0c0c5" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- 象限标注 -->
+  <text x="80" y="40" class="scatter-zone-label" fill="#2e7d32">⭐ 高性价比高投入</text>
+  <text x="430" y="40" class="scatter-zone-label" fill="#0d47a1">🟡 投入大需校验</text>
+  <text x="80" y="395" class="scatter-zone-label" fill="#ef6c00">✅ 性价比之王</text>
+  <text x="430" y="395" class="scatter-zone-label" fill="#c62828">🔴 必须复盘归因</text>
+
+  <!-- Y 轴刻度（金额，0-50万） -->
+  <text x="55" y="404" text-anchor="end" class="scatter-axis-label">0</text>
+  <text x="55" y="306" text-anchor="end" class="scatter-axis-label">10w</text>
+  <text x="55" y="214" text-anchor="end" class="scatter-axis-label">20w</text>
+  <text x="55" y="116" text-anchor="end" class="scatter-axis-label">30w</text>
+  <text x="55" y="24" text-anchor="end" class="scatter-axis-label">42w</text>
+
+  <!-- X 轴刻度（CPM 0-13000，分段视觉） -->
+  <text x="60" y="418" text-anchor="middle" class="scatter-axis-label">0</text>
+  <text x="148" y="418" text-anchor="middle" class="scatter-axis-label">100</text>
+  <text x="237" y="418" text-anchor="middle" class="scatter-axis-label">200</text>
+  <text x="325" y="418" text-anchor="middle" class="scatter-axis-label">500</text>
+  <text x="410" y="418" text-anchor="middle" class="scatter-axis-label">1000</text>
+  <text x="568" y="418" text-anchor="middle" class="scatter-axis-label">5000</text>
+  <text x="730" y="418" text-anchor="middle" class="scatter-axis-label">12500+</text>
+
+  <!-- 轴标题 -->
+  <text x="400" y="445" text-anchor="middle" font-size="12" font-weight="600" fill="#1d1d1f">CPM（元）</text>
+  <text x="20" y="220" text-anchor="middle" font-size="12" font-weight="600" fill="#1d1d1f" transform="rotate(-90 20 220)">投入金额</text>
+
+  <!-- 数据气泡（基于 31 条视频。x = CPM 分段映射，y = 400 - 金额/42w×380, r = sqrt(观看)/50 ）-->
+  <!-- S 级（绿） -->
+  <circle cx="65" cy="396" r="9" fill="#06A77D" opacity="0.75"/><text x="65" y="382" text-anchor="middle" font-size="9" fill="#2e7d32">年糕妈妈</text>
+  <circle cx="74" cy="396" r="12" fill="#06A77D" opacity="0.75"/>
+  <circle cx="85" cy="376" r="16" fill="#06A77D" opacity="0.75"/><text x="100" y="370" font-size="9" fill="#2e7d32">茅善玉</text>
+  <circle cx="95" cy="394" r="11" fill="#06A77D" opacity="0.75"/><text x="115" y="394" font-size="9" fill="#2e7d32">杨梅</text>
+  <circle cx="115" cy="395" r="8" fill="#06A77D" opacity="0.75"/><text x="135" y="395" font-size="9" fill="#2e7d32">马姐</text>
+  <circle cx="138" cy="318" r="22" fill="#06A77D" opacity="0.85" stroke="#1b5e20" stroke-width="2"/><text x="138" y="290" text-anchor="middle" font-size="10" fill="#1b5e20" font-weight="700">⭐程雷</text>
+  <circle cx="145" cy="361" r="13" fill="#06A77D" opacity="0.75"/><text x="170" y="361" font-size="9" fill="#2e7d32">小李吃八方</text>
+
+  <!-- A 级（蓝） -->
+  <circle cx="158" cy="362" r="13" fill="#1565c0" opacity="0.75"/><text x="180" y="370" font-size="9" fill="#0d47a1">陈蓉</text>
+  <circle cx="240" cy="318" r="15" fill="#1565c0" opacity="0.75"/><text x="260" y="318" font-size="9" fill="#0d47a1">程雷-钙</text>
+  <circle cx="250" cy="350" r="13" fill="#1565c0" opacity="0.75"/><text x="270" y="345" font-size="9" fill="#0d47a1">汤山小王</text>
+
+  <!-- B 级（橙） -->
+  <circle cx="265" cy="376" r="10" fill="#f9a825" opacity="0.75"/><text x="290" y="376" font-size="9" fill="#ef6c00">高志凯</text>
+  <circle cx="285" cy="358" r="11" fill="#f9a825" opacity="0.75"/><text x="310" y="358" font-size="9" fill="#ef6c00">吴琼</text>
+  <circle cx="295" cy="394" r="7" fill="#f9a825" opacity="0.75"/>
+  <circle cx="305" cy="354" r="11" fill="#f9a825" opacity="0.75"/><text x="330" y="350" font-size="9" fill="#ef6c00">朱桢</text>
+  <circle cx="315" cy="390" r="9" fill="#f9a825" opacity="0.75"/>
+  <circle cx="325" cy="290" r="17" fill="#f9a825" opacity="0.75"/><text x="350" y="285" font-size="9" fill="#ef6c00">Olga</text>
+  <circle cx="335" cy="290" r="17" fill="#f9a825" opacity="0.75"/><text x="360" y="298" font-size="9" fill="#ef6c00">罗振宇</text>
+  <circle cx="365" cy="80" r="24" fill="#f9a825" opacity="0.85" stroke="#b45309" stroke-width="2"/><text x="365" y="50" text-anchor="middle" font-size="10" fill="#b45309" font-weight="700">央视文艺</text>
+  <circle cx="345" cy="360" r="10" fill="#f9a825" opacity="0.75"/><text x="370" y="362" font-size="9" fill="#ef6c00">陈蓉直播</text>
+
+  <!-- C 级（深橙） -->
+  <circle cx="440" cy="318" r="11" fill="#ef6c00" opacity="0.78" stroke="#c25e00" stroke-width="1"/><text x="465" y="320" font-size="9" fill="#c25e00">陈松伶</text>
+  <circle cx="475" cy="360" r="8" fill="#ef6c00" opacity="0.78" stroke="#c25e00" stroke-width="1"/><text x="500" y="362" font-size="9" fill="#c25e00">王金博</text>
+  <circle cx="475" cy="394" r="5" fill="#ef6c00" opacity="0.78" stroke="#c25e00" stroke-width="1"/><text x="500" y="395" font-size="9" fill="#c25e00">饺子爸</text>
+
+  <!-- 高客单段（中性灰，调性差异化人选） -->
+  <circle cx="565" cy="378" r="7" fill="#9ca3af" opacity="0.7"/><text x="588" y="378" font-size="9" fill="#6b7280">刘雪松</text>
+  <circle cx="595" cy="240" r="13" fill="#9ca3af" opacity="0.75"/><text x="618" y="240" font-size="9" fill="#6b7280">央视网快看</text>
+  <circle cx="725" cy="378" r="5" fill="#9ca3af" opacity="0.7"/><text x="708" y="368" font-size="9" fill="#6b7280">李佳念</text>
+</svg>
+
+<div class="scatter-legend">
+<span><span class="dot" style="background: #06A77D;"></span>S 级（CPM &lt; 100）</span>
+<span><span class="dot" style="background: #1565c0;"></span>A 级（100-200）</span>
+<span><span class="dot" style="background: #f9a825;"></span>B 级（200-500）</span>
+<span><span class="dot" style="background: #ef6c00;"></span>C 级（500-3000）</span>
+<span><span class="dot" style="background: #9ca3af;"></span>高客单段（&gt;3000，含品牌背书价值）</span>
+<span style="margin-left: 8px;">💡 气泡大小 ∝ 观看量</span>
+</div>
+</div>
+
+<div class="insight-box">
+<div class="insight-title">⚡ 一图两个判断</div>
+<div class="insight-content">
+<b>① 左下密集</b>（S 级 + 杨梅 / 茅善玉 / 马姐 / 年糕妈妈）= H1 投入小但效果好的腰部金矿，<b>Q3 继续放大复用</b>。<br>
+<b>② 左上凸起</b>（程雷气泡最大）= 投入大且 CPM 优秀的核心人物，<b>Q3 长期合作池压舱石</b>。
+</div>
+</div>
+</div>
+
+<!-- ============= 1.2.0b 五梯队热力分布带 · 新增 ============= -->
+<div class="page">
+<div class="section-tag">1.2 · 梯队分布 <span class="viz-label">VIZ</span></div>
+<div class="title">📊 五梯队 · 视频数 + 投入金额 双视图</div>
+<div class="subtitle">31 条视频按 CPM 梯队的分布密度</div>
+
+<div class="h3">视频数分布（按梯队条宽 = 视频数占比）</div>
+<div class="tier-band">
+<div class="tier-seg s" style="flex: 7;"><div class="t-name">S · 7 条</div><div class="t-detail">CPM &lt; 100 · 22.6%</div></div>
+<div class="tier-seg a" style="flex: 3;"><div class="t-name">A · 3 条</div><div class="t-detail">100-200 · 9.7%</div></div>
+<div class="tier-seg b" style="flex: 9;"><div class="t-name">B · 9 条</div><div class="t-detail">200-500 · 29.0%</div></div>
+<div class="tier-seg c" style="flex: 3;"><div class="t-name">C · 3 条</div><div class="t-detail">500-3000 · 9.7%</div></div>
+<div class="tier-seg d" style="flex: 3;"><div class="t-name">高客单 · 3 条</div><div class="t-detail">&gt;3000 · 9.7%</div></div>
+</div>
+
+<div class="h3" style="margin-top: 30px;">投入金额分布（按梯队条宽 = 金额占比）</div>
+<div class="tier-budget-band">
+<div class="seg s" style="flex: 11;">S · ¥9.0 万 · 6.6%</div>
+<div class="seg a" style="flex: 22;">A · ¥18.1 万 · 13.2%</div>
+<div class="seg b" style="flex: 78;">B · ¥87.7 万 · 64.0%</div>
+<div class="seg c" style="flex: 16;">C · ¥13.1 万 · 9.6%</div>
+<div class="seg d" style="flex: 26;">高客单段 · ¥21.0 万 · 15.3%</div>
+</div>
+
+<div class="insight-box">
+<div class="insight-title">⚡ 两条带子读出的关键事实</div>
+<div class="insight-content">
+<b>第一条（视频数）</b>：S 级 7 条 + A 级 3 条 = <b>10 条"高性价比"视频已建模</b>，占视频数的 32%。<br>
+<b>第二条（金额）</b>：S+A 级 19.8% 的预算贡献了 H1 高性价比基石。<b>Q3 建议保持现有基本盘，并把腰部金矿（S 级线索）的预算占比再向上挪一档</b>——这是把客户已经跑通的打法做大，而不是推翻重做。
+</div>
+</div>
+
+<div class="h3" style="margin-top: 24px;">📊 7 商品 H1 投入分布</div>
+<div class="bar-chart">
+<div class="bar-row"><div class="bar-label">小蓝瓶（成人广谱）</div><div class="bar-track"><div class="bar-fill b" style="width: 100%;">90.4 万</div></div><div class="bar-value">55%</div></div>
+<div class="bar-row"><div class="bar-label">S100 益生菌</div><div class="bar-track"><div class="bar-fill b" style="width: 28%;">25.2 万</div></div><div class="bar-value">15%</div></div>
+<div class="bar-row"><div class="bar-label">银发益生菌二期 ⭐</div><div class="bar-track"><div class="bar-fill s" style="width: 18%;">16.4 万</div></div><div class="bar-value">10%</div></div>
+<div class="bar-row"><div class="bar-label">银发益生菌一期</div><div class="bar-track"><div class="bar-fill a" style="width: 15.5%;">14.0 万</div></div><div class="bar-value">8%</div></div>
+<div class="bar-row"><div class="bar-label">液体钙 Grow</div><div class="bar-track"><div class="bar-fill a" style="width: 9.7%;">8.8 万</div></div><div class="bar-value">5%</div></div>
+<div class="bar-row"><div class="bar-label">Easy100 PRO</div><div class="bar-track"><div class="bar-fill b" style="width: 8.6%;">7.8 万</div></div><div class="bar-value">5%</div></div>
+<div class="bar-row"><div class="bar-label">女性益生菌 <span class="tag-blue">新</span></div><div class="bar-track"><div class="bar-fill neutral" style="width: 3.7%;">3.3 万</div></div><div class="bar-value">2%</div></div>
+</div>
+</div>
+
+<!-- ============= 1.2.0c 达人卡片矩阵 · S/A 级（H1 性价比基石）· 新增 ============= -->
+<div class="page">
+<div class="section-tag">1.2 · 达人画像 <span class="viz-label">VIZ</span></div>
+<div class="title">🏆 S/A 级达人 · H1 性价比基石 · 10 位</div>
+<div class="subtitle">Q3 长期合作池的候选样本</div>
+
+<div class="kol-grid">
+<div class="kol-card tier-bar-s"><div class="kol-tier-bar"></div>
+<div class="kol-head"><div class="kol-avatar">👶</div><div><div class="kol-name">年糕妈妈 <span class="kol-badge replay">2次合作</span></div><div class="kol-product">液体钙</div></div></div>
+<div class="kol-cpm-big s">¥6</div>
+<div class="kol-metrics">
+<div class="kol-metric"><div class="ml">合作金额</div><div class="mv">¥2,100</div></div>
+<div class="kol-metric"><div class="ml">观看</div><div class="mv">4.9 万</div></div>
+</div>
+</div>
+
+<div class="kol-card tier-bar-s"><div class="kol-tier-bar"></div>
+<div class="kol-head"><div class="kol-avatar">👵</div><div><div class="kol-name">马姐的退休生活</div><div class="kol-product">银发一期</div></div></div>
+<div class="kol-cpm-big s">¥17</div>
+<div class="kol-metrics">
+<div class="kol-metric"><div class="ml">合作金额</div><div class="mv">¥2,100</div></div>
+<div class="kol-metric"><div class="ml">观看</div><div class="mv">12.3 万</div></div>
+</div>
+</div>
+
+<div class="kol-card tier-bar-s"><div class="kol-tier-bar"></div>
+<div class="kol-head"><div class="kol-avatar">🍓</div><div><div class="kol-name">杨梅姐姐 YM</div><div class="kol-product">小蓝瓶</div></div></div>
+<div class="kol-cpm-big s">¥32</div>
+<div class="kol-metrics">
+<div class="kol-metric"><div class="ml">合作金额</div><div class="mv">¥10,500</div></div>
+<div class="kol-metric"><div class="ml">观看</div><div class="mv">33.1 万</div></div>
+</div>
+</div>
+
+<div class="kol-card tier-bar-s"><div class="kol-tier-bar"></div>
+<div class="kol-head"><div class="kol-avatar">🌸</div><div><div class="kol-name">魅力海上花茅善玉</div><div class="kol-product">银发二期</div></div></div>
+<div class="kol-cpm-big s">¥38</div>
+<div class="kol-metrics">
+<div class="kol-metric"><div class="ml">合作金额</div><div class="mv">¥31,500</div></div>
+<div class="kol-metric"><div class="ml">观看</div><div class="mv">82.4 万</div></div>
+</div>
+</div>
+
+<div class="kol-card tier-bar-s"><div class="kol-tier-bar"></div>
+<div class="kol-head"><div class="kol-avatar">👶</div><div><div class="kol-name">年糕妈妈 <span class="kol-badge replay">2次合作</span></div><div class="kol-product">液体钙·搜索向</div></div></div>
+<div class="kol-cpm-big s">¥43</div>
+<div class="kol-metrics">
+<div class="kol-metric"><div class="ml">合作金额</div><div class="mv">¥2,100</div></div>
+<div class="kol-metric"><div class="ml">观看</div><div class="mv">34.6 万</div></div>
+</div>
+</div>
+
+<div class="kol-card tier-bar-s"><div class="kol-tier-bar"></div>
+<div class="kol-head"><div class="kol-avatar">🎙️</div><div><div class="kol-name">⭐ 程雷 cl <span class="kol-badge replay">3次合作</span></div><div class="kol-product">小蓝瓶（H1 最大爆款）</div></div></div>
+<div class="kol-cpm-big s">¥72</div>
+<div class="kol-metrics">
+<div class="kol-metric"><div class="ml">合作金额</div><div class="mv">¥84,000</div></div>
+<div class="kol-metric"><div class="ml">观看</div><div class="mv">116.2 万</div></div>
+</div>
+</div>
+
+<div class="kol-card tier-bar-s"><div class="kol-tier-bar"></div>
+<div class="kol-head"><div class="kol-avatar">🍜</div><div><div class="kol-name">小李吃八方</div><div class="kol-product">银发二期</div></div></div>
+<div class="kol-cpm-big s">¥95</div>
+<div class="kol-metrics">
+<div class="kol-metric"><div class="ml">合作金额</div><div class="mv">¥42,000</div></div>
+<div class="kol-metric"><div class="ml">观看</div><div class="mv">44.2 万</div></div>
+</div>
+</div>
+
+<div class="kol-card tier-bar-a"><div class="kol-tier-bar"></div>
+<div class="kol-head"><div class="kol-avatar">📺</div><div><div class="kol-name">陈蓉的视频号 <span class="kol-badge live">直播带量</span></div><div class="kol-product">银发二期</div></div></div>
+<div class="kol-cpm-big a">¥117</div>
+<div class="kol-metrics">
+<div class="kol-metric"><div class="ml">合作金额</div><div class="mv">¥42,000</div></div>
+<div class="kol-metric"><div class="ml">观看</div><div class="mv">35.9 万</div></div>
+</div>
+</div>
+
+<div class="kol-card tier-bar-a"><div class="kol-tier-bar"></div>
+<div class="kol-head"><div class="kol-avatar">🎙️</div><div><div class="kol-name">程雷 cl <span class="kol-badge replay">3次合作</span></div><div class="kol-product">液体钙</div></div></div>
+<div class="kol-cpm-big a">¥174</div>
+<div class="kol-metrics">
+<div class="kol-metric"><div class="ml">合作金额</div><div class="mv">¥84,000</div></div>
+<div class="kol-metric"><div class="ml">观看</div><div class="mv">48.4 万</div></div>
+</div>
+</div>
+
+<div class="kol-card tier-bar-a"><div class="kol-tier-bar"></div>
+<div class="kol-head"><div class="kol-avatar">🏔️</div><div><div class="kol-name">汤山小王</div><div class="kol-product">Easy100 PRO</div></div></div>
+<div class="kol-cpm-big a">¥184</div>
+<div class="kol-metrics">
+<div class="kol-metric"><div class="ml">合作金额</div><div class="mv">¥54,600</div></div>
+<div class="kol-metric"><div class="ml">观看</div><div class="mv">29.7 万</div></div>
+</div>
+</div>
+</div>
+
+<div class="insight-box">
+<div class="insight-title">💎 这 10 位达人的共同特征</div>
+<div class="insight-content">
+<b>5 位</b>合作金额 ≤ ¥10,500（腰部）｜ <b>3 位</b>有银发/退休调性 ｜ <b>4 位</b>涉及女性/母婴场景 ｜ <b>程雷</b>是跨商品复用王者。<br>
+这 10 位就是<b>动作 ⑦ 水晶球反向下钻的种子样本</b>——三簇分组分别启动 AI 智选，可在 Q3 大场前拿到拓人池清单。
+</div>
+</div>
+</div>
+
+<!-- ============= 1.2 H1 视频性价比五梯队 ============= -->
+<div class="page">
+<div class="section-tag">1.2 · 达人投放盘点</div>
+<div class="title">🎬 H1 视频 CPM 五梯队诊断</div>
+<div class="subtitle">基于 31 条完整金额×观看数据 · 互选后台口径</div>
+
+<div class="h3">各商品投入分布（新增女性益生菌品类）</div>
+<table>
+<thead><tr><th>商品</th><th>投入金额</th><th>达人数</th><th>视频数</th><th>CPM(元)</th><th>梯队</th></tr></thead>
+<tbody>
+<tr><td><b>小蓝瓶（成人广谱）</b></td><td>90.4 万</td><td>11</td><td>13</td><td>308</td><td><span class="tier-B">B</span></td></tr>
+<tr><td><b>S100 益生菌</b></td><td>25.2 万</td><td>2</td><td>2</td><td>358</td><td><span class="tier-B">B</span></td></tr>
+<tr><td>银发益生菌二期</td><td>16.4 万</td><td>5</td><td>6</td><td><b>95</b></td><td><span class="tier-S">S ⭐</span></td></tr>
+<tr><td>银发益生菌一期</td><td>14.0 万</td><td>5</td><td>5</td><td>108</td><td><span class="tier-A">A</span></td></tr>
+<tr><td>液体钙（Grow 萌长 1 号）</td><td>8.8 万</td><td>2</td><td>3</td><td>100</td><td><span class="tier-A">A</span></td></tr>
+<tr><td>Easy100 PRO</td><td>7.8 万</td><td>2</td><td>2</td><td>210</td><td><span class="tier-B">B</span></td></tr>
+<tr><td><b>女性益生菌</b> <span class="tag-blue">新品类</span></td><td><b>3.3 万</b></td><td>2</td><td>2</td><td>待补</td><td>—</td></tr>
+<tr style="background: #f0f7ff;"><td><b>合计（7 商品）</b></td><td><b>165.8 万</b></td><td><b>29</b></td><td><b>33</b></td><td><b>205</b></td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============= 1.2 S 级 ============= -->
+<div class="page">
+<div class="section-tag">1.2 · S 级 性价比标杆</div>
+<div class="title">✅ S 级梯队 · CPM &lt; 100 元</div>
+<div class="subtitle">应 Q3 大量复用的"性价比之王" · 共 7 条视频</div>
+
+<table>
+<thead><tr><th>达人</th><th>商品</th><th>金额</th><th>观看</th><th>CPM</th></tr></thead>
+<tbody>
+<tr><td><b>年糕妈妈</b>（ROI向直播后）</td><td>液体钙</td><td>¥2,100</td><td>48,909</td><td><span class="tier-S">¥6</span></td></tr>
+<tr><td><b>马姐的退休生活</b></td><td>银发一期</td><td>¥2,100</td><td>122,605</td><td><span class="tier-S">¥17</span></td></tr>
+<tr><td><b>杨梅姐姐 YM</b></td><td>小蓝瓶</td><td>¥10,500</td><td>331,050</td><td><span class="tier-S">¥32</span></td></tr>
+<tr><td><b>魅力海上花茅善玉</b></td><td>银发二期</td><td>¥31,500</td><td>823,505</td><td><span class="tier-S">¥38</span></td></tr>
+<tr><td><b>年糕妈妈</b>（搜索向直播）</td><td>液体钙</td><td>¥2,100</td><td>345,833</td><td><span class="tier-S">¥43</span></td></tr>
+<tr><td><b>程雷cl</b></td><td>小蓝瓶</td><td>¥84,000</td><td>1,161,505</td><td><span class="tier-S">¥72</span></td></tr>
+<tr><td><b>小李吃八方</b></td><td>银发二期</td><td>¥42,000</td><td>442,473</td><td><span class="tier-S">¥95</span></td></tr>
+</tbody>
+</table>
+
+<div class="insight-box">
+<div class="insight-title">💎 核心洞察 · 万益蓝团队的腰部选号护城河</div>
+<div class="insight-content">
+S 级梯队里有 <b>5 位达人的合作金额 ≤ ¥10,500</b>——意味着万益蓝在"低单价腰部达人"的选号能力是<b>行业内顶尖的</b>。<br>
+这个能力 Q3 应放大复用，是万益蓝团队 H1 最值得骄傲的资产之一。
+</div>
+</div>
+</div>
+
+<!-- ============= 1.2 A/B 级 ============= -->
+<div class="page">
+<div class="section-tag">1.2 · A & B 级</div>
+<div class="title">📊 A 级（优秀）+ B 级（中等）梯队</div>
+
+<div class="h3">✅ A 级 · CPM 100-200 · 保持节奏</div>
+<table>
+<thead><tr><th>达人</th><th>商品</th><th>金额</th><th>观看</th><th>CPM</th></tr></thead>
+<tbody>
+<tr><td>陈蓉的视频号</td><td>银发二期</td><td>¥42,000</td><td>358,787</td><td><span class="tier-A">¥117</span></td></tr>
+<tr><td>程雷cl</td><td>液体钙</td><td>¥84,000</td><td>483,902</td><td><span class="tier-A">¥174</span></td></tr>
+<tr><td>汤山小王</td><td>Easy100 PRO</td><td>¥54,600</td><td>296,629</td><td><span class="tier-A">¥184</span></td></tr>
+</tbody>
+</table>
+
+<div class="h3" style="margin-top: 24px;">🟡 B 级 · CPM 200-500 · 待观察</div>
+<table>
+<thead><tr><th>达人</th><th>商品</th><th>金额</th><th>观看</th><th>CPM</th></tr></thead>
+<tbody>
+<tr><td>高志凯频道（3 视频合计）</td><td>小蓝瓶</td><td>¥31,500</td><td>146,232</td><td><span class="tier-B">¥215</span></td></tr>
+<tr><td>吴琼阮巡夫妇</td><td>小蓝瓶</td><td>¥44,100</td><td>168,945</td><td><span class="tier-B">¥261</span></td></tr>
+<tr><td>碧君的生活</td><td>小蓝瓶</td><td>¥9,555</td><td>34,125</td><td><span class="tier-B">¥280</span></td></tr>
+<tr><td>朱桢的一天</td><td>银发一期</td><td>¥52,500</td><td>183,077</td><td><span class="tier-B">¥287</span></td></tr>
+<tr><td>青海瓦清</td><td>Easy100 PRO</td><td>¥23,205</td><td>73,009</td><td><span class="tier-B">¥318</span></td></tr>
+<tr><td>Olga 姐姐</td><td>S100</td><td>¥126,000</td><td>360,207</td><td><span class="tier-B">¥350</span></td></tr>
+<tr><td>罗振宇</td><td>S100</td><td>¥126,000</td><td>343,808</td><td><span class="tier-B">¥366</span></td></tr>
+<tr><td>央视文艺</td><td>小蓝瓶</td><td>¥420,000</td><td>965,199</td><td><span class="tier-B">¥435</span></td></tr>
+<tr><td>陈蓉（直播预约）</td><td>银发二期</td><td>¥42,000</td><td>105,369</td><td><span class="tier-B">¥399</span></td></tr>
+</tbody>
+</table>
+
+<div class="tip-box">
+<b>💡 央视文艺特别说明：</b>CPM 435 元数据上偏高，但<b>央视背书带来的品牌资产价值</b>无法用 CPM 单一指标衡量。属于"应保留"序列。
+</div>
+</div>
+
+<!-- ============= 1.2 中后段达人 · 调优参考 ============= -->
+<div class="page">
+<div class="section-tag">1.2 · 调优参考</div>
+<div class="title">📋 中后段达人 · Q3 节奏调优参考</div>
+<div class="subtitle">数字仅作单一维度参考，<b>是否调整最终由万益蓝团队综合权衡</b></div>
+
+<div class="h3">中段达人（CPM 500-3000）</div>
+<table>
+<thead><tr><th>达人</th><th>商品</th><th>金额</th><th>观看</th><th>CPM</th></tr></thead>
+<tbody>
+<tr><td>陈松伶（直播预约）</td><td>小蓝瓶</td><td>¥84,000</td><td>67,625</td><td>¥1,242</td></tr>
+<tr><td>王金博老师</td><td>银发一期</td><td>¥42,000</td><td>16,021</td><td>¥2,621</td></tr>
+<tr><td>饺子爸逛北京</td><td>银发二期</td><td>¥5,250</td><td>1,947</td><td>¥2,696</td></tr>
+</tbody>
+</table>
+
+<div class="h3" style="margin-top: 24px;">高客单达人（合作金额或形态特殊）</div>
+<table>
+<thead><tr><th>达人</th><th>商品</th><th>金额</th><th>观看</th><th>合作特征</th></tr></thead>
+<tbody>
+<tr><td>央视网快看</td><td>小蓝瓶</td><td>¥168,000</td><td>29,855</td><td><span class="tag-blue">央视端品牌背书</span></td></tr>
+<tr><td>评论员刘雪松</td><td>小蓝瓶</td><td>¥21,000</td><td>6,323</td><td>评论员人设</td></tr>
+<tr><td>主持人李佳念</td><td>小蓝瓶</td><td>¥21,000</td><td>1,684</td><td>主持人内容</td></tr>
+</tbody>
+</table>
+
+<div class="tip-box">
+<b>💡 我们的视角：</b>这一段达人合作中，<b>陈松伶（直播预约带量）、央视网快看（央视端品牌公信力）</b>包含 CPM 单一指标无法衡量的额外价值。Q3 是否调整不构成"必须动作"——我们的角色是把数据摆清楚，决策权完全在客户。
+</div>
+</div>
+
+<!-- ============= 1.2 TOP10 单视频 ============= -->
+<div class="page">
+<div class="section-tag">1.2 · 爆款识别</div>
+<div class="title">🏆 单视频观看 TOP10</div>
+<div class="subtitle">H1 爆款达人识别</div>
+
+<table>
+<thead><tr><th style="width:40px">#</th><th>达人</th><th>商品</th><th>观看</th><th>CPM</th><th>Carmen 速读</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><b>程雷cl</b></td><td>小蓝瓶</td><td>116.2 万</td><td>¥72</td><td><span class="tag-strong">⭐⭐ H1 最大爆款</span></td></tr>
+<tr><td>2</td><td><b>程雷cl</b></td><td>银发一期</td><td>97.1 万</td><td>¥43</td><td><span class="tag-strong">⭐ 跨商品复用</span></td></tr>
+<tr><td>3</td><td><b>央视文艺</b></td><td>小蓝瓶</td><td>96.5 万</td><td>¥435</td><td>⭐⭐ 央视背书</td></tr>
+<tr><td>4</td><td><b>魅力海上花茅善玉</b></td><td>银发二期</td><td>82.4 万</td><td>¥38</td><td><span class="tag-strong">⭐⭐ 沪剧+性价比</span></td></tr>
+<tr><td>5</td><td>程雷cl</td><td>液体钙</td><td>48.4 万</td><td>¥174</td><td>三度复用</td></tr>
+<tr><td>6</td><td>小李吃八方</td><td>银发二期</td><td>44.2 万</td><td>¥95</td><td>银发线高效</td></tr>
+<tr><td>7</td><td>Olga 姐姐</td><td>S100</td><td>36.0 万</td><td>¥350</td><td>高净值女性</td></tr>
+<tr><td>8</td><td>陈蓉的视频号</td><td>银发二期</td><td>35.9 万</td><td>¥117</td><td>主持人调性</td></tr>
+<tr><td>9</td><td>年糕妈妈</td><td>液体钙</td><td>34.6 万</td><td>¥6</td><td><span class="tag-weak">⭐ 母婴头部</span></td></tr>
+<tr><td>10</td><td>罗振宇</td><td>S100</td><td>34.4 万</td><td>¥366</td><td>知识 IP</td></tr>
+</tbody>
+</table>
+
+<div class="h3" style="margin-top: 24px;">H1 达人选号的 3 个判断</div>
+<div class="action-card">
+<div><span class="action-num">1</span><span class="action-title">核心人物 · 程雷cl</span></div>
+<p style="margin-top: 10px; margin-left: 42px;">H1 跨 3 商品 / 3 次合作 / 累计 156 万观看 / 平均 CPM ¥96，<b>已经是万益蓝视频号的"御用品牌人物"</b>。</p>
+</div>
+<div class="action-card">
+<div><span class="action-num">2</span><span class="action-title">腰部选号能力突出</span></div>
+<p style="margin-top: 10px; margin-left: 42px;">年糕妈妈 / 马姐 / 杨梅姐姐 / 茅善玉 这一组 ¥2,000-¥30,000 的腰部达人，<b>CPM 全部 &lt; ¥40</b>——这是行业内难得的腰部选号能力。</p>
+</div>
+<div class="action-card">
+<div><span class="action-num">3</span><span class="action-title">复用与试错并存</span></div>
+<p style="margin-top: 10px; margin-left: 42px;">高志凯频道 3 次 / 程雷 3 次 / 陈蓉 2 次 / 年糕妈妈 2 次——<b>验证过的达人会果断加码</b>，团队决策机制成熟。</p>
+</div>
+</div>
+
+<!-- ============= 1.3 小蓝瓶深度模块 ============= -->
+<div class="page">
+<div class="section-tag">1.3 · 深度模块</div>
+<div class="title">🔍 小蓝瓶 ¥90.4 万 · 结构性诊断</div>
+<div class="subtitle">H1 投入最重商品（占总预算 55%）· 13 条视频逐一透视</div>
+
+<table>
+<thead><tr><th>视频</th><th>金额</th><th>观看</th><th>CPM</th><th>梯队</th></tr></thead>
+<tbody>
+<tr><td>程雷cl</td><td>¥84,000</td><td>1,161,505</td><td>¥72</td><td><span class="tier-S">S</span></td></tr>
+<tr><td>杨梅姐姐 YM</td><td>¥10,500</td><td>331,050</td><td>¥32</td><td><span class="tier-S">S（性价比第一）</span></td></tr>
+<tr><td>央视文艺</td><td>¥420,000</td><td>965,199</td><td>¥435</td><td><span class="tier-B">B（央视背书另算）</span></td></tr>
+<tr><td>吴琼阮巡夫妇</td><td>¥44,100</td><td>168,945</td><td>¥261</td><td><span class="tier-B">B</span></td></tr>
+<tr><td>高志凯频道（3 视频合计）</td><td>¥31,500</td><td>146,232</td><td>¥215</td><td><span class="tier-B">B</span></td></tr>
+<tr><td>碧君的生活</td><td>¥9,555</td><td>34,125</td><td>¥280</td><td><span class="tier-B">B</span></td></tr>
+<tr><td>焕之说传奇</td><td>¥10,290</td><td>23,316</td><td>¥441</td><td><span class="tier-C">C</span></td></tr>
+<tr><td>陈松伶（直播预约）</td><td>¥84,000</td><td>67,625</td><td>¥1,242</td><td><span class="tier-C">C（带量价值另议）</span></td></tr>
+<tr><td>评论员刘雪松</td><td>¥21,000</td><td>6,323</td><td>¥3,321</td><td><span class="tier-D">高客单</span></td></tr>
+<tr><td>央视网快看</td><td>¥168,000</td><td>29,855</td><td>¥5,627</td><td><span class="tier-D">高客单（含背书）</span></td></tr>
+<tr><td>主持人李佳念</td><td>¥21,000</td><td>1,684</td><td>¥12,470</td><td><span class="tier-D">高客单</span></td></tr>
+<tr style="background: #f0f7ff;"><td><b>合计（13 条）</b></td><td><b>¥903,945</b></td><td><b>2,935,859</b></td><td><b>¥308</b></td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============= 1.3 预算结构判断 ============= -->
+<div class="page">
+<div class="section-tag">1.3 · 小蓝瓶预算结构</div>
+<div class="title">💰 小蓝瓶 H1 预算 · 四类划分</div>
+
+<table>
+<thead><tr><th>类别</th><th>金额</th><th>占比</th><th>含视频</th><th>Q3 节奏参考</th></tr></thead>
+<tbody>
+<tr><td><span class="tag-weak">✅ 性价比基本盘</span></td><td><b>¥538,500</b></td><td>60%</td><td>程雷 + 央视文艺 + 杨梅 + 吴琼 + 高志凯 + 碧君 + 焕之说</td><td>建议继续合作</td></tr>
+<tr><td><span class="tag-blue">📺 品牌背书段</span></td><td><b>¥273,000</b></td><td>30%</td><td>陈松伶（直播预约带量）+ 央视网快看（央视端公信力）+ 评论员 / 主持人内容</td><td>带额外品牌价值，是否调整完全由客户判断</td></tr>
+<tr><td>其它（自播分发等）</td><td>¥92,445</td><td>10%</td><td>自播间 + 其他长尾</td><td>不影响主体决策</td></tr>
+</tbody>
+</table>
+
+<div class="tip-box">
+<b>💡 我们的视角：</b>小蓝瓶 H1 是<b>"性价比基本盘 + 品牌背书段"双轨投放</b>结构——基本盘已经跑出非常成熟的腰部打法；品牌背书段（央视端、主持人内容）包含 CPM 单一指标无法衡量的价值。Q3 是否调整内部结构、调整多少，完全由客户综合判断，我们不做强建议。
+</div>
+</div>
+
+<!-- ============= 1.4 女性益生菌 ============= -->
+<div class="page">
+<div class="section-tag">1.4 · 新洞察</div>
+<div class="title">🌱 女性益生菌新品类 · H1 试水</div>
+<div class="subtitle">2026 年 6 月 H1 末期新建立的品类线</div>
+
+<table>
+<thead><tr><th>维度</th><th>数据</th></tr></thead>
+<tbody>
+<tr><td>H1 视频数</td><td>2 条</td></tr>
+<tr><td>投入</td><td>¥32,550</td></tr>
+<tr><td>投放周期</td><td>6/2 - 6/3（试水 2 天）</td></tr>
+<tr><td>达人</td><td><b>粤式斯文 SISI</b> ¥27,300 + <b>主持人李秀媛</b> ¥5,250</td></tr>
+<tr><td>调性</td><td>粤语向 + 台湾女主持</td></tr>
+</tbody>
+</table>
+
+<div class="tip-box">
+<b>初判：</b>这是 H1 末期才起的新品类，<b>观看量数据未拉到</b>，所以无法做 CPM 诊断。但选号方向（粤语向 / 台湾女主持）显示万益蓝在女性益生菌上做的是<b>差异化区域+调性试水</b>，不是简单的大流量打法。
+</div>
+
+<div class="h3">📌 Q3 建议</div>
+<div class="action-card">
+<div><span class="action-num">1</span><span class="action-title">建立独立 ROI 跟踪表</span></div>
+<p style="margin-top: 10px; margin-left: 42px;">把"女性益生菌"单独建立一个商品线 ROI 跟踪表，与小蓝瓶 / S100 / Easy100 解耦。</p>
+</div>
+<div class="action-card">
+<div><span class="action-num">2</span><span class="action-title">3-5 位差异化达人测试</span></div>
+<p style="margin-top: 10px; margin-left: 42px;">不只是粤语 / 台湾——例如中年女性向 / 母婴向 / 都市白领向，扩展女性场景覆盖度。</p>
+</div>
+<div class="action-card">
+<div><span class="action-num">3</span><span class="action-title">与 S100 的定位差异化</span></div>
+<p style="margin-top: 10px; margin-left: 42px;">"S100（高净值女性）"和"女性益生菌（功能向女性）"应建立清晰差异化心智，避免内部消耗。</p>
+</div>
+</div>
+
+<!-- ============= 1.5 H1 复盘核心结论 ============= -->
+<div class="page" style="background: linear-gradient(135deg, #f9fafc 0%, #ffffff 100%);">
+<div class="section-tag">1.5 · 核心结论</div>
+<div class="title">📌 H1 复盘 · 一页看完</div>
+
+<div class="insight-box">
+<div class="insight-title">✅ H1 做对的事</div>
+<div class="insight-content">
+万益蓝团队的种草路径<b>完全正确</b>——既出 GMV 又出 R3 资产，达人选号成熟、<b>腰部选号能力突出</b>、互选触点结构健康、R3 沉淀效率优秀。
+</div>
+</div>
+
+<div style="margin: 26px 0;">
+<div class="h3" style="margin-bottom: 18px; color: #ef6c00;">⚠️ Q3 可优化的 3 个方向</div>
+
+<div class="action-card" style="border-left: 4px solid #ef6c00;">
+<div><span class="action-num" style="background: #ef6c00;">1</span><span class="action-title">R3 占比短板</span></div>
+<p style="margin-top: 10px; margin-left: 42px;">12.32% vs 赛道 15.55%，差 3.23pp，<b>视频号互选破圈是关键</b>。</p>
+</div>
+
+<div class="action-card" style="border-left: 4px solid #ef6c00;">
+<div><span class="action-num" style="background: #ef6c00;">2</span><span class="action-title">小蓝瓶投放结构</span></div>
+<p style="margin-top: 10px; margin-left: 42px;">"性价比基本盘 + 品牌背书段"双轨结构清晰，<b>Q3 可基于客户判断把腰部金矿（S 级线索）的占比再向上挪一档</b>。</p>
+</div>
+
+<div class="action-card" style="border-left: 4px solid #ef6c00;">
+<div><span class="action-num" style="background: #ef6c00;">3</span><span class="action-title">缺乏事后 R3 沉淀效率视角</span></div>
+<p style="margin-top: 10px; margin-left: 42px;">现阶段花的钱攒下了多少长期品牌资产，<b>缺乏数据维度的量化口径</b>。</p>
+</div>
+</div>
+</div>
+
+<!-- ============= Part 2 标题页 ============= -->
+<div class="page" style="background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%); text-align: center; padding: 28px 50px; border-top: 1px solid #ececf0; border-bottom: 1px solid #ececf0;">
+<div style="display: inline-flex; align-items: center; gap: 14px;">
+<span style="font-size: 28px;">🚀</span>
+<span style="font-size: 11px; color: #86868b; letter-spacing: 4px;">PART 02</span>
+<span style="font-size: 22px; font-weight: 700; color: #1d1d1f;">Q3 建议动作</span>
+<span style="font-size: 12px; color: #86868b;">· 服务定位 · 8 个加码动作 · 3 个对齐期待</span>
+</div>
+</div>
+
+<!-- ============= 2.0 Q3 八动作优先级矩阵 · 新增 ============= -->
+<div class="page">
+<div class="section-tag">2.0 · 全景导览 <span class="viz-label">VIZ</span></div>
+<div class="title">🎯 Q3 八个动作 · 影响力 × 紧迫度矩阵</div>
+<div class="subtitle">一图看完 Q3 8 个加码动作的优先级</div>
+
+<div class="matrix-wrap">
+<div class="matrix-grid">
+<div class="matrix-divider-h"></div>
+<div class="matrix-divider-v"></div>
+
+<div class="matrix-zone tl">🟦 高影响 · 低紧迫<br/>系统性建设</div>
+<div class="matrix-zone tr">🟥 高影响 · 高紧迫<br/>立刻启动</div>
+<div class="matrix-zone bl">🟫 低影响 · 低紧迫<br/>顺手做</div>
+<div class="matrix-zone br">🟧 低影响 · 高紧迫<br/>速战速决</div>
+
+<!-- 八个气泡。坐标基于 4 象限：左上=战略建设、右上=核心战役、左下=辅助、右下=快赢 -->
+<!-- 影响力（Y）：越高位置越上 ｜ 紧迫度（X）：越右越紧迫 -->
+
+<!-- 右上 · 高影响高紧迫（核心战役） -->
+<div class="matrix-bubble b1" style="top: 18%; left: 78%;">③</div>
+<div class="matrix-label" style="top: 18%; left: 78%;">小蓝瓶腰部加密</div>
+
+<div class="matrix-bubble b2" style="top: 30%; left: 65%;">①</div>
+<div class="matrix-label" style="top: 30%; left: 65%;">已验证爆款达人池</div>
+
+<div class="matrix-bubble b3" style="top: 25%; left: 86%;">⑤</div>
+<div class="matrix-label" style="top: 25%; left: 86%;">Q3 大场矩阵 · 无超品日</div>
+
+<!-- 左上 · 高影响低紧迫（系统建设） -->
+<div class="matrix-bubble b4" style="top: 22%; left: 25%;">⑦</div>
+<div class="matrix-label" style="top: 22%; left: 25%;">S/A 级水晶球下钻</div>
+
+<div class="matrix-bubble b5" style="top: 38%; left: 18%;">⑧</div>
+<div class="matrix-label" style="top: 38%; left: 18%;">TOP10 内容方法论</div>
+
+<div class="matrix-bubble b6" style="top: 32%; left: 38%;">②</div>
+<div class="matrix-label" style="top: 32%; left: 38%;">视频号互选破圈</div>
+
+<!-- 右下 · 低影响高紧迫（速战速决） -->
+<div class="matrix-bubble b7" style="top: 70%; left: 68%;">⑥</div>
+<div class="matrix-label" style="top: 70%; left: 68%;">月度 R3 沉淀复盘</div>
+
+<!-- 左下 · 低影响低紧迫（持续做） -->
+<div class="matrix-bubble b8" style="top: 75%; left: 30%;">④</div>
+<div class="matrix-label" style="top: 75%; left: 30%;">商品级月度效率复盘</div>
+
+</div>
+<div class="matrix-axis-x">紧迫度 →</div>
+<div class="matrix-axis-y">← 影响力</div>
+</div>
+
+<div class="kol-grid-2">
+<div style="background: linear-gradient(135deg, #fff5f5, #ffeaea); border-radius: 10px; padding: 16px; border-left: 4px solid #E63946;">
+<div style="font-size: 13px; font-weight: 700; color: #c62828; margin-bottom: 8px;">🟥 高影响 · 高紧迫 · 立刻启动</div>
+<div style="font-size: 13px; color: #1d1d1f; line-height: 1.8;">
+<b>动作 ③</b> · 小蓝瓶腰部加密（基于客户判断把 S 级线索占比再向上挪一档）<br>
+<b>动作 ①</b> · 程雷 / 茅善玉 / 杨梅 / 年糕妈妈长期合作池<br>
+<b>动作 ⑤</b> · Q3 三场自播 + 三场达播节奏拍板
+</div>
+</div>
+
+<div style="background: linear-gradient(135deg, #e3f2fd, #d6e7fc); border-radius: 10px; padding: 16px; border-left: 4px solid #1565c0;">
+<div style="font-size: 13px; font-weight: 700; color: #0d47a1; margin-bottom: 8px;">🟦 高影响 · 低紧迫 · 系统建设</div>
+<div style="font-size: 13px; color: #1d1d1f; line-height: 1.8;">
+<b>动作 ⑦</b> · S/A 级达人 → 水晶球反向下钻拓人池<br>
+<b>动作 ⑧</b> · TOP10 内容方法论 → 标准化脚本库<br>
+<b>动作 ②</b> · 视频号互选 50% → 65% 破圈
+</div>
+</div>
+
+<div style="background: linear-gradient(135deg, #fff3e0, #ffe4c2); border-radius: 10px; padding: 16px; border-left: 4px solid #ef6c00;">
+<div style="font-size: 13px; font-weight: 700; color: #ef6c00; margin-bottom: 8px;">🟧 低影响 · 高紧迫 · 速战速决</div>
+<div style="font-size: 13px; color: #1d1d1f; line-height: 1.8;">
+<b>动作 ⑥</b> · 月度 R3 沉淀复盘机制 + 单品归因校准<br>
+<span style="font-size: 11px; color: #86868b;">→ 7 月起每月 25 日 30 分钟会议</span>
+</div>
+</div>
+
+<div style="background: linear-gradient(135deg, #f5f5f7, #ececf0); border-radius: 10px; padding: 16px; border-left: 4px solid #6b7280;">
+<div style="font-size: 13px; font-weight: 700; color: #4b5563; margin-bottom: 8px;">🟫 低影响 · 低紧迫 · 持续打磨</div>
+<div style="font-size: 13px; color: #1d1d1f; line-height: 1.8;">
+<b>动作 ④</b> · 7 商品种草综合效率排行表<br>
+<span style="font-size: 11px; color: #86868b;">→ 月度产出，纳入动作⑥固定章节</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ============= 2.1 服务定位调整 ============= -->
+<div class="page">
+<div class="section-tag">2.1 · 服务定位</div>
+<div class="title">🎯 我们对万益蓝的服务定位调整</div>
+
+<div class="insight-box">
+<div class="insight-title">⚡ 我们的角色</div>
+<div class="insight-content" style="font-size: 16px;">
+<b>本次合作不替代万益蓝团队的选人专业度。</b><br>
+Q3 我们承接选号之后的 4 件事：<span class="highlight">投前校验、投中加热、投后沉淀、季度蓄水</span>。
+</div>
+</div>
+
+<table>
+<thead><tr><th>环节</th><th>客户侧现有视角的空白点</th><th>本次合作承接的工作</th><th>频次</th></tr></thead>
+<tbody>
+<tr><td><b>① 投前校验</b></td><td>选号阶段缺乏事后调性预判的数据视角</td><td>大场前 2 周用数据做调性匹配度预判</td><td>每次大场前</td></tr>
+<tr><td><b>② 投中加热</b></td><td>优质内容缺乏精准放大的工具与预算</td><td>互选加热 + 投放端流量加持</td><td>实时</td></tr>
+<tr><td><b>③ 投后沉淀</b></td><td>现有视角聚焦 GMV / ROI，缺乏 R3 资产增量沉淀</td><td>月度沉淀单达人 R3 增量贡献报表</td><td>每月 1 次</td></tr>
+<tr><td><b>④ 季度蓄水</b></td><td>大场前缺乏"提前 4-6 周蓄水"的节奏机制</td><td>大场前 4-6 周做 R3 蓄水方案</td><td>每季 1 次</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============= 2.2 动作 ① ============= -->
+<div class="page">
+<div class="section-tag">2.2 · 动作 ①</div>
+<div class="title">🏆 已验证爆款达人 · 长期合作池</div>
+<div class="subtitle">H1 已验证 TOP4，Q3 进入"长期合作池"按月度节奏稳定投入</div>
+
+<table>
+<thead><tr><th>达人</th><th>H1 累计观看</th><th>H1 平均 CPM</th><th>跨商品</th><th>Q3 建议</th></tr></thead>
+<tbody>
+<tr><td><b>程雷cl</b></td><td>156.0 万</td><td>¥96</td><td>小蓝瓶 / 银发 / 液体钙</td><td>月度锁定 1 条 + 99/双11 重点合作</td></tr>
+<tr><td><b>魅力海上花茅善玉</b></td><td>82.4 万</td><td>¥38</td><td>银发二期</td><td>银发线月度复用，拓二期续约</td></tr>
+<tr><td><b>杨梅姐姐 YM</b></td><td>33.1 万</td><td>¥32</td><td>小蓝瓶</td><td>性价比第一名，季度续约</td></tr>
+<tr><td><b>年糕妈妈</b></td><td>39.5 万</td><td>¥24</td><td>液体钙</td><td>母婴线月度复用</td></tr>
+</tbody>
+</table>
+
+<div class="tip-box">
+<b>💡 我们能给的支持：</b>互选加热预算（让爆款内容多曝光 30%-50%）+ 大场前 2 周 R3 蓄水方案
+</div>
+</div>
+
+<!-- ============= 2.2 动作 ② ============= -->
+<div class="page">
+<div class="section-tag">2.2 · 动作 ②</div>
+<div class="title">📡 视频号互选破圈 · 补足 R3 短板</div>
+<div class="subtitle">H1 视频号互选人群覆盖度 7.82% vs 赛道均值 27.23%</div>
+
+<table>
+<thead><tr><th>方向</th><th>目标</th><th>Q3 建议预算变化</th></tr></thead>
+<tbody>
+<tr><td>视频号互选预算</td><td>占总互选预算 50% → 65%</td><td><span class="tag-strong">+15pp</span></td></tr>
+<tr><td>视频号互选达人池</td><td>在已合作 29 位之外，新增 5-8 位破圈试点</td><td>—</td></tr>
+<tr><td>视频号互选频次</td><td>月度 4-6 条新视频</td><td>—</td></tr>
+</tbody>
+</table>
+
+<div class="tip-box">
+<b>💡 我们能给的支持：</b>
+<ol style="margin: 8px 0 0 18px;">
+<li>用品牌 R3 人群反查可合作的视频号达人候选池（<b>最终名单需经客户团队调性把关后再投放</b>——我们承认万益蓝团队对"养生场景下的用户信任"判断比数据模型更准）</li>
+<li>视频号互选加热资源</li>
+</ol>
+</div>
+</div>
+
+<!-- ============= 2.2 动作 ③ · 小蓝瓶腰部加密 ============= -->
+<div class="page">
+<div class="section-tag">2.2 · 动作 ③</div>
+<div class="title">📈 小蓝瓶 · 腰部金矿加密建议</div>
+<div class="subtitle">在不动客户现有"性价比基本盘 + 品牌背书段"双轨结构的前提下，新增 Q3 增量供给</div>
+
+<div class="h3">Q3 建议在小蓝瓶板块增配的腰部方向</div>
+<table>
+<thead><tr><th>方向</th><th>参考调性</th><th>Q3 新增建议</th><th>H1 已验证 CPM 区间</th></tr></thead>
+<tbody>
+<tr><td>沪剧 / 文艺向腰部</td><td>类似茅善玉</td><td>1-2 位</td><td><span class="tier-S">¥30-50</span></td></tr>
+<tr><td>女性生活向腰部</td><td>类似杨梅姐姐</td><td>1-2 位</td><td><span class="tier-S">¥30-100</span></td></tr>
+<tr><td>母婴 / 银发向腰部</td><td>类似年糕妈妈、小李吃八方</td><td>1-2 位</td><td><span class="tier-S">¥6-95</span></td></tr>
+</tbody>
+</table>
+
+<div class="tip-box">
+<b>💡 这一动作的定位：</b>客户腰部选号能力已经在 H1 跑通——年糕妈妈 ¥6、茅善玉 ¥38、杨梅 ¥32，这是行业内非常难得的成熟打法。<b>我们的角色不是替客户选号，而是协助把 H1 这套腰部选号能力在 Q3 复用到更多新人选上</b>，让基本盘更厚。
+</div>
+
+<div class="tip-box" style="background: #f0f7ff;">
+<b>📌 关于现有"品牌背书段"：</b>陈松伶（直播预约带量）、央视网快看（央视端公信力）的合作是否调整，<b>完全由客户综合判断</b>。我们这一页只针对"如何把基本盘做厚"提供腰部供给侧建议，不对现有合作做任何评价。
+</div>
+</div>
+
+<!-- ============= 2.2 动作 ④ ============= -->
+<div class="page">
+<div class="section-tag">2.2 · 动作 ④</div>
+<div class="title">📊 商品级种草效率月度复盘</div>
+<div class="subtitle">H1 在 7 个商品线均有投入，CPM 效率分化明显</div>
+
+<table>
+<thead><tr><th>商品</th><th>H1 投入</th><th>H1 CPM</th><th>单视频最大观看</th><th>Q3 关注点</th></tr></thead>
+<tbody>
+<tr><td>银发益生菌二期</td><td>16.4 万</td><td><span class="tier-S">¥95</span></td><td>茅善玉 82.4 万</td><td>CPM 最低 + 爆款，Q3 加码概率高</td></tr>
+<tr><td>液体钙</td><td>8.8 万</td><td><span class="tier-A">¥100</span></td><td>程雷 48.4 万</td><td><b>被低估的母婴线</b>，值得加码</td></tr>
+<tr><td>银发益生菌一期</td><td>14.0 万</td><td>¥108</td><td>程雷 97.1 万</td><td>老 SKU 仍有效率</td></tr>
+<tr><td>Easy100 PRO</td><td>7.8 万</td><td>¥210</td><td>汤山小王 29.7 万</td><td>新品起量阶段，需多轮测试</td></tr>
+<tr><td>小蓝瓶</td><td>90.4 万</td><td>¥308</td><td>程雷 116.2 万</td><td>重投商品，结构优化（见动作③）</td></tr>
+<tr><td>S100</td><td>25.2 万</td><td>¥358</td><td>Olga 36.0 万</td><td>CPM 最高，需校验长期价值</td></tr>
+<tr><td><b>女性益生菌</b> <span class="tag-blue">新品</span></td><td>3.3 万</td><td>待补</td><td>—</td><td>新品类试水，Q3 重点跟踪</td></tr>
+</tbody>
+</table>
+
+<div class="insight-box">
+<div class="insight-title">⚡ 三个关键判断</div>
+<div class="insight-content">
+<b>① 银发线 = H1 性价比之王</b> · 一期/二期 CPM 均 &lt; ¥110，单视频均有爆款<br>
+<b>② 液体钙 = 被低估的母婴线</b> · CPM 仅 ¥100，但 H1 投入最低，Q3 可加码<br>
+<b>③ 小蓝瓶 = H1 主力投入</b> · 占总投入 55%，性价比基本盘（S+A 段）已成型，Q3 建议把腰部金矿占比再向上挪一档
+</div>
+</div>
+
+<div class="tip-box">
+<b>💡 我们能给的支持：</b>每月提供一份"7 商品的种草综合效率排行表"——含 CPM / 单视频观看 TOP / 累计观看 / 跨商品复用达人识别 4 个维度。
+</div>
+
+<div class="warn-box">
+<b>关于"商品维度 R3 资产沉淀"的说明：</b>腾讯营销侧 5R 资产数据<b>目前只支持品牌维度合并展示，不支持单商品独立拆分</b>。我们的月度商品级复盘将基于「种草投放报告 + 互选触点效率」两个真实可拉的口径，不做 5R 拆分。
+</div>
+</div>
+
+<!-- ============= 2.2 动作 ⑤ ============= -->
+<div class="page">
+<div class="section-tag">2.2 · 动作 ⑤</div>
+<div class="title">🎬 Q3 大场矩阵 · 无超品日路径</div>
+<div class="subtitle">2026 Q3 膳食行业不参加超品日，Q3 增长靠客户自有大场矩阵支撑</div>
+
+<table>
+<thead><tr><th>大场类型</th><th>Q3 建议节奏</th><th>腾讯营销侧配套</th></tr></thead>
+<tbody>
+<tr><td><b>品牌自播大场</b></td><td>7 / 8 / 9 月各 1 场</td><td>互选加热 + 朋友圈支持</td></tr>
+<tr><td><b>达播大场</b></td><td>7 / 8 / 9 月各 1-2 场</td><td>大场前 4-6 周 R3 蓄水 + 大场中流量加持</td></tr>
+<tr><td><b>互选大场</b></td><td>季度 1 次集中爆破</td><td>互选加热（最高 6 万）+ 广告金后返（最高 6 万）</td></tr>
+<tr><td><b>品牌大场（视频号原生）</b></td><td>季度 1 次</td><td>腾飞金（最高 8 万）</td></tr>
+</tbody>
+</table>
+
+<div class="h3" style="margin-top: 26px;">📐 每个大场建议执行 · 三段式结构</div>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 18px 0;">
+<div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); padding: 22px; border-radius: 10px; text-align: center;">
+<div style="font-size: 28px; margin-bottom: 8px;">🌊</div>
+<div style="font-size: 14px; font-weight: 700; color: #0d47a1;">前 4-6 周</div>
+<div style="font-size: 13px; color: #1565c0; margin-top: 6px;">R3 蓄水<br>提前曝光铺路</div>
+</div>
+<div style="background: linear-gradient(135deg, #ffebee, #ffcdd2); padding: 22px; border-radius: 10px; text-align: center;">
+<div style="font-size: 28px; margin-bottom: 8px;">💥</div>
+<div style="font-size: 14px; font-weight: 700; color: #b71c1c;">大场当天</div>
+<div style="font-size: 13px; color: #c62828; margin-top: 6px;">流量集中爆破<br>互选加热 + 投放放大</div>
+</div>
+<div style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); padding: 22px; border-radius: 10px; text-align: center;">
+<div style="font-size: 28px; margin-bottom: 8px;">📊</div>
+<div style="font-size: 14px; font-weight: 700; color: #1b5e20;">后 2 周</div>
+<div style="font-size: 13px; color: #2e7d32; margin-top: 6px;">R3 回收<br>复盘 + 沉淀报表</div>
+</div>
+</div>
+</div>
+
+<!-- ============= 2.2 动作 ⑥ ============= -->
+<div class="page">
+<div class="section-tag">2.2 · 动作 ⑥</div>
+<div class="title">📈 月度 R3 沉淀复盘 · 内部汇报弹药</div>
+<div class="subtitle">每月 25 日左右 · 30 分钟会议</div>
+
+<div class="h3">我们的月度交付物</div>
+<div class="action-card">
+<div><span class="action-num">1</span><span class="action-title">当月 R3 / R4 / R5 净增数据</span></div>
+</div>
+<div class="action-card">
+<div><span class="action-num">2</span><span class="action-title">单达人 R3 增量贡献排行</span></div>
+</div>
+<div class="action-card">
+<div><span class="action-num">3</span><span class="action-title">单商品 R3 沉淀效率排行</span></div>
+</div>
+<div class="action-card">
+<div><span class="action-num">4</span><span class="action-title">下月达人调性校验建议</span></div>
+</div>
+<div class="action-card" style="border: 2px solid #1565c0;">
+<div><span class="action-num">5</span><span class="action-title">单品归因校准 <span class="tag-blue">新增</span></span></div>
+<p style="margin-top: 10px; margin-left: 42px;">针对客户内部一直在讨论的"小蓝瓶 vs 体重瓶 ROI 归因"争议，我们提供基于互选+ADQ 数据的归因校准方案。</p>
+</div>
+
+<div class="insight-box">
+<div class="insight-title">💎 这个交付物的核心价值</div>
+<div class="insight-content">
+辅助解决内部汇报中 <span class="highlight">"花的钱攒了多少品牌资产"</span> 这个<b>很难量化但很重要</b>的问题——给品牌团队向 CFO / CEO 解释品牌投入价值时的"硬证据"。
+</div>
+</div>
+</div>
+
+<!-- ============= 2.3 H1 种草整体效果 · 行业横向数据 ============= -->
+<div class="page">
+<div class="section-tag">2.3 · H1 种草整体效果 <span class="viz-label">营销复盘报告</span></div>
+<div class="title">📈 H1 互选种草 · 全行业横向数据印证</div>
+<div class="subtitle">数据来源：营销复盘报告导出 · 万益蓝/wonderlab · 计算周期 2026-01-01 ~ 2026-06-19 · 转化时长 60 天</div>
+
+<div class="insight-box">
+<div class="insight-title">⚡ 一句话先说</div>
+<div class="insight-content">
+万益蓝 H1 互选种草不仅"做了"，而且在<b>全行业横向口径下，每一项核心指标都跑赢竞品和行业均值</b>——这是 PART 1 所有腰部达人选号能力的最终背书。
+</div>
+</div>
+
+<div class="h3">三大模块 · 12 项核心指标 vs 行业基准</div>
+<table>
+<thead>
+<tr><th>模块</th><th>指标</th><th style="background:#e8f5e9;">本品</th><th>竞品均值</th><th>行业均值</th><th>行业 TOP5</th><th>vs 行业</th></tr>
+</thead>
+<tbody>
+<tr><td rowspan="3"><b>广告触达</b></td><td>曝光人数</td><td><b>863.99 万</b></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>花费</td><td><b>¥223.90 万</b></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>人均曝光成本</td><td>¥0.26</td><td>¥0.21</td><td>¥0.10</td><td>¥0.91</td><td><span class="tag-mid">中位水平</span></td></tr>
+<tr><td rowspan="5"><b>品牌资产</b></td><td>投后 5R 总资产</td><td><b>863.99 万</b></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>人群增长率</td><td><b>4.87 倍</b></td><td>2.48</td><td>2.60</td><td>4.48</td><td><span class="tag-strong">✅ 已接近行业 TOP5</span></td></tr>
+<tr><td><b>R3 流入率</b></td><td><b>13.90%</b></td><td>4.39%</td><td>4.21%</td><td>16.81%</td><td><span class="tag-strong">⭐ 3.3 倍于行业均值</span></td></tr>
+<tr><td>拉新占比</td><td>82.95%</td><td>37.67%</td><td>54.72%</td><td>99.98%</td><td><span class="tag-strong">✅ 1.5 倍于行业</span></td></tr>
+<tr><td>加深率</td><td>39.91%</td><td>29.50%</td><td>31.85%</td><td>85.87%</td><td><span class="tag-strong">✅ 优于行业</span></td></tr>
+<tr><td rowspan="4"><b>转化效果</b></td><td>转化人数</td><td><b>2.45 万</b></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td><b>人群转化率</b></td><td><b>0.284%</b></td><td>0.023%</td><td>0.024%</td><td>0.217%</td><td><span class="tag-strong">⭐⭐ 12 倍于行业、已超 TOP5</span></td></tr>
+<tr><td>人均转化成本</td><td><b>¥91</b></td><td>¥905</td><td>¥437</td><td>¥1,421</td><td><span class="tag-strong">⭐⭐ 行业 1/5</span></td></tr>
+<tr><td><b>ROI</b></td><td><b>11.97</b></td><td>1.14</td><td>0.71</td><td>2.08</td><td><span class="tag-strong">⭐⭐⭐ 行业 17 倍、TOP5 5.7 倍</span></td></tr>
+</tbody>
+</table>
+
+<div class="tip-box" style="margin-top: 16px;">
+<b>💡 三条结论（已可量化）</b><br>
+① <b>种草 ROI 11.97 = 行业 TOP5 (2.08) 的 5.7 倍</b>——万益蓝是膳食行业种草 ROI 天花板级别玩家。<br>
+② <b>R3 流入率 13.90% vs 行业 4.21%</b>——H1 选号的「腰部金矿打法」已在行业横向口径下被验证有效。<br>
+③ <b>人均转化成本仅 ¥91（行业 1/5）</b>——意味着每一笔互选投入都在产出真实的 R3 沉淀+下单转化，不是"为种草而种草"。
+</div>
+</div>
+
+<!-- ============= 2.4 H1 互选 · 触点深度拆解 ============= -->
+<div class="page">
+<div class="section-tag">2.4 · H1 互选触点深度拆解</div>
+<div class="title">🎯 视频号互选 · R3 流入率分触点对比</div>
+<div class="subtitle">同一份预算在不同互选触点下的 R3 沉淀效率差异</div>
+
+<div class="h3">分触点 R3 流入率（万益蓝 H1 实测）</div>
+<table>
+<thead>
+<tr><th>互选触点</th><th style="background:#e8f5e9;">本品 R3 流入率</th><th>本品历史均值</th><th>竞品均值</th><th>行业均值</th><th>行业 TOP5</th></tr>
+</thead>
+<tbody>
+<tr><td><b>互选（合并）</b></td><td><b>13.90%</b></td><td>9.07%</td><td>11.76%</td><td>20.86%</td><td>33.17%</td></tr>
+<tr><td>互选 &gt; <b>视频号互选</b></td><td><b>13.90%</b></td><td>9.10%</td><td>11.88%</td><td>21.76%</td><td>34.57%</td></tr>
+<tr><td>互选 &gt; 公众号互选</td><td>8.64%</td><td>15.71%</td><td>2.05%</td><td>5.05%</td><td>20.79%</td></tr>
+</tbody>
+</table>
+
+<div class="insight-box">
+<div class="insight-title">⚡ 两个关键事实</div>
+<div class="insight-content">
+① <b>万益蓝视频号互选 R3 流入率 13.90% 已超竞品均值 (11.88%)，但距离行业 TOP5 (34.57%) 仍有 2.5 倍空间</b>——这是 Q3 互选预算可以稳健加码的核心依据，不是"突破"，是"上探"。<br>
+② 公众号互选 R3 流入率 8.64% 远低于本品历史均值 (15.71%)，说明 H1 公众号链路投入不足或选号方向待优化——可作为 Q3 扩链路的<b>低优先级机会点</b>，不必强行铺开。
+</div>
+</div>
+
+<div class="h3" style="margin-top: 24px;">PART 2 章末小结 · 把 H1 数据翻译成 Q3 三句话</div>
+<div class="tip-box" style="background: linear-gradient(135deg, #f0f7ff 0%, #fff 100%);">
+<b>① 选号能力（PART 1）</b>：腰部达人的 CPM 五梯队画像 + 银发/母婴/知识三大线种已沉淀方法论。<br>
+<b>② 种草效果（2.3）</b>：12 项核心指标全面跑赢行业均值，ROI 已达行业 TOP5 的 5.7 倍。<br>
+<b>③ Q3 复用方向（动作 ①~⑨）</b>：把 H1 已验证的腰部金矿打法 → 用如翼 AI 智选 + 钜如翼反推扩大池子。
+</div>
+</div>
+
+<!-- ============= 2.2 动作 ⑦ ============= -->
+<div class="page">
+<div class="section-tag">2.2 · 动作 ⑦ <span style="color: #1565c0;">如翼下钻</span></div>
+<div class="title">🔮 S/A 级达人 · 水晶球反向下钻</div>
+<div class="subtitle">基于 H1 已验证的 S/A 级达人样本，用如翼 AI 智选反推 Q3 拓人池</div>
+
+<div class="insight-box">
+<div class="insight-title">⚡ 核心思路</div>
+<div class="insight-content">
+对单个达人无法直接做水晶球洞察，但可将 H1 的 <b>S 级 + A 级共 10 位达人按调性分组</b>，每组作为种子信号反向输入 AI 智选，生成精准人群包，再用<b>水晶球 10 维度洞察（3 大类）</b>反推匹配的 IP 节目与达人清单。
+</div>
+</div>
+
+<div class="h3">Step 1 · 调性簇分组（基于 H1 实测 CPM &lt; 200 的 10 位达人）</div>
+<table>
+<thead><tr><th>调性簇</th><th>包含达人</th><th>核心标签</th></tr></thead>
+<tbody>
+<tr><td><b>簇 A · 银发养生型</b></td><td>魅力海上花茅善玉 / 马姐的退休生活 / 小李吃八方 / 朱桢的一天 / 陈蓉的视频号</td><td>55+/退休/沪剧/家庭健康</td></tr>
+<tr><td><b>簇 B · 母婴妈妈型</b></td><td>年糕妈妈 ×2 / 杨梅姐姐 YM</td><td>25-40 女性/育儿/家庭采购决策</td></tr>
+<tr><td><b>簇 C · 知识权威型</b></td><td>程雷cl / 央视文艺 / 罗振宇 / Olga 姐姐</td><td>35-55 高知/央视背书/品味/财经</td></tr>
+</tbody>
+</table>
+
+<div class="h3" style="margin-top: 24px;">Step 2 · 三簇并行启动 AI 智选 · 5 个工作日</div>
+<table>
+<thead><tr><th>动作</th><th>耗时</th><th>产出</th></tr></thead>
+<tbody>
+<tr><td>① 输入三簇 brief（商品颗粒度选人）</td><td>当天</td><td>每簇 3 个 AI 智选人群包</td></tr>
+<tr><td>② AI 智选计算</td><td>72 小时</td><td>水晶球画像生成</td></tr>
+<tr><td>③ 推送至投放端</td><td>48 小时</td><td>投放端可见</td></tr>
+<tr><td>④ 钜如翼 + 翼红人反推</td><td>1 天</td><td>IP 节目清单 + 达人清单</td></tr>
+</tbody>
+</table>
+
+<div class="warn-box">
+⏱️ <b>时间预算：</b>从 brief 到拿到完整清单至少需要 5 个工作日。Q3 大场前 <b>4-6 周必须启动</b>，否则赶不上大场前的人群推送窗口。
+</div>
+</div>
+
+<!-- ============= 2.2 动作 ⑦ 续 · 水晶球读图 ============= -->
+<div class="page">
+<div class="section-tag">2.2 · 动作 ⑦ · 续</div>
+<div class="title">📊 水晶球洞察 · 实际维度结构</div>
+<div class="subtitle">如翼后台水晶球洞察支持 3 大类共 10 个维度，按 brief 需要勾选</div>
+
+<table>
+<thead><tr><th>大类</th><th>维度</th><th>对客户的价值</th></tr></thead>
+<tbody>
+<tr><td rowspan="4"><b>人群维度</b></td><td>人群基础属性</td><td>性别/年龄/地域/消费力等基础画像</td></tr>
+<tr><td>行业推荐人群</td><td>识别本行业内已沉淀人群标签</td></tr>
+<tr><td>品牌共鸣人群</td><td>识别可联名/异业合作的相邻品牌</td></tr>
+<tr><td>受众影音偏好</td><td>识别音乐/影视调性，辅助内容形态判断</td></tr>
+<tr><td rowspan="5"><b>场景维度</b></td><td>受众长视频偏好</td><td>腾讯视频频道/节目 TOP10 - Q3 大场冠名/植入候选</td></tr>
+<tr><td>受众阅读偏好 - 公众号</td><td>公众号一级类目 TOP10 - Q3 扩链路方向</td></tr>
+<tr><td>受众阅读偏好 - 视频号</td><td>视频号一级类目 TOP10 - 验证 H1 选号 + 拓池</td></tr>
+<tr><td>兴趣场域 - 媒体位</td><td>用户活跃的腾讯系媒体位分布</td></tr>
+<tr><td>受众新闻偏好</td><td>新闻资讯调性，辅助内容供给</td></tr>
+<tr><td><b>商品维度</b></td><td>受众商品偏好</td><td>跨行业商品 TOP10 - 联合营销/异业合作切入点</td></tr>
+</tbody>
+</table>
+
+<div class="tip-box" style="margin-top: 12px; background: #fff5f5; border-left-color: #ef6c00;">
+<b>📌 实操建议：</b>水晶球洞察一次任务可勾选多维度同时下钻，但 brief 时建议<b>聚焦 3-4 个核心维度</b>避免输出散乱。万益蓝下钻三簇达人时，推荐组合：<b>「受众阅读偏好-视频号」+「品牌共鸣人群」+「受众商品偏好」</b>——三段构成"选号验证 + 异业联名 + 货盘扩品"完整闭环。
+</div>
+
+<div class="h3" style="margin-top: 24px;">Step 3 · 三段重叠度交叉（核心交付物）</div>
+<table>
+<thead><tr><th>重叠区</th><th>含义</th><th>Q3 动作</th></tr></thead>
+<tbody>
+<tr><td><b>已合作 ∩ AI 反推</b></td><td>水晶球验证 H1 选号准确</td><td>续约 + 加码（呼应动作①）</td></tr>
+<tr><td><b>已合作 - AI 反推</b></td><td>H1 选了但水晶球不推荐</td><td>Q3 校验 R3 沉淀效率</td></tr>
+<tr><td><b>AI 反推 - 已合作</b></td><td>水晶球推荐但 H1 未合作</td><td><span class="tag-strong">⭐ Q3 拓人池候选名单 ⭐</span></td></tr>
+</tbody>
+</table>
+
+<div class="warn-box">
+<b>⚠️ 工具能力边界说明：</b>水晶球每维度仅展示 TOP10、不同维度的 TA 浓度标尺不可跨维度比较、AI 智选投放端不支持年龄/性别定向且不能与其他机会人群同投。这些限制将在 brief 阶段前置考虑。
+</div>
+</div>
+
+<!-- ============= 2.2 动作 ⑧ ============= -->
+<div class="page">
+<div class="section-tag">2.2 · 动作 ⑧ <span style="color: #1565c0;">内容方法论</span></div>
+<div class="title">🎬 TOP10 爆款 · 四象限内容拆解</div>
+<div class="subtitle">不看达人粉丝盘（不可复制），看内容形态（可复用方法论）</div>
+
+<div class="insight-box">
+<div class="insight-title">⚡ 核心思路</div>
+<div class="insight-content">
+单视频 TOP10 是 H1 的内容爆款样本。达人有粉丝盘是不可复制变量，但<b>内容形态可以沉淀为脚本模板</b>——这是 Q3 给新合作达人提供的"可复制爆款公式"。
+</div>
+</div>
+
+<div class="h3">角度 1 · 内容形态分类（最关键）</div>
+<table>
+<thead><tr><th>内容形态</th><th>TOP10 里的视频</th><th>Q3 可复用价值</th></tr></thead>
+<tbody>
+<tr><td><b>场景代入剧</b>（故事开篇）</td><td>程雷 116 万 / 央视文艺 96 万</td><td><span class="tier-S">🔴 高复用</span> Q3 拍同款脚本给其他达人套用</td></tr>
+<tr><td>沉浸式产品体验</td><td>魅力海上花茅善玉 82.4 万</td><td><span class="tier-A">🟠 中复用</span> 需达人有专业身份背书</td></tr>
+<tr><td>多人对话/夫妻对谈</td><td>吴琼阮巡夫妇 16.8 万</td><td><span class="tier-B">🟡 低复用</span> 双 IP 形态稀缺</td></tr>
+<tr><td>知识科普口播</td><td>罗振宇 34.4 万</td><td><span class="tier-A">🟠 中复用</span> 可批量化</td></tr>
+<tr><td><b>生活日常 vlog 软植入</b></td><td>年糕妈妈 34.6 万 / Olga 36 万</td><td><span class="tier-S">🔴 高复用</span> 情感链路最深</td></tr>
+</tbody>
+</table>
+
+<div class="tip-box">
+<b>💡 核心判断：</b>TOP10 里"<b>场景剧 + vlog 软植入</b>"两种形态占 6 条——Q3 建议将这两类内容沉淀为<b>标准化脚本模板</b>，给新合作达人套用，降低试错成本。
+</div>
+</div>
+
+<!-- ============= 动作 ⑧ · 续 · 角度2-5 ============= -->
+<div class="page">
+<div class="section-tag">2.2 · 动作 ⑧ · 续</div>
+<div class="title">📝 内容拆解 · 角度 2-5</div>
+
+<div class="h3">角度 2 · 开头 3 秒钩子分析</div>
+<table>
+<thead><tr><th>钩子类型</th><th>案例</th><th>留人能力</th></tr></thead>
+<tbody>
+<tr><td>冲突开场（"我居然……"）</td><td>程雷 116 万</td><td><span class="tier-S">极强</span></td></tr>
+<tr><td>身份开场（"作为央视主持……"）</td><td>央视文艺 96 万</td><td><span class="tier-A">强</span></td></tr>
+<tr><td>痛点开场（"很多人都……"）</td><td>待对照标注</td><td>中</td></tr>
+<tr><td>悬念开场（"今天要给大家……"）</td><td>待对照标注</td><td>中</td></tr>
+</tbody>
+</table>
+
+<div class="h3" style="margin-top: 24px;">角度 3 · 植入位置 & 时长占比</div>
+<ul style="padding-left: 24px; font-size: 14px; color: #333; line-height: 2;">
+<li><b>植入位置</b>：开头/中段/结尾——结尾占比越高 = 内容主导，开头占比越高 = 硬广味重</li>
+<li><b>时长占比</b>：≤30% 为"软植入"，&gt;50% 偏硬广</li>
+<li>TOP10 中"软植入率高"的视频在 R3 沉淀效率上理论更好——此项作为 Q3 月度复盘的固定指标</li>
+</ul>
+
+<div class="h3" style="margin-top: 24px;">角度 4 · 商品口播 keyword 整理</div>
+<table>
+<thead><tr><th>视频</th><th>核心 keyword</th><th>出现次数</th></tr></thead>
+<tbody>
+<tr><td>程雷 116 万</td><td>万益蓝、肠道、菌活力</td><td>待统计</td></tr>
+<tr><td>茅善玉 82.4 万</td><td>银发、舒畅、菌</td><td>待统计</td></tr>
+</tbody>
+</table>
+<div class="tip-box">
+此份 keyword 整理结果将形成 <b>"H2 内容标准 keyword 库"</b>，确保所有合作达人口播一致性，强化品牌心智单元的统一记忆。
+</div>
+
+<div class="h3" style="margin-top: 24px;">角度 5 · CTA（转化引导）方式</div>
+<table>
+<thead><tr><th>CTA 形态</th><th>H1 案例</th></tr></thead>
+<tbody>
+<tr><td>直接挂车</td><td>年糕妈妈 ROI 向</td></tr>
+<tr><td><b>直播预约</b></td><td>陈松伶 / 陈蓉的视频号</td></tr>
+<tr><td>评论区引流</td><td>央视文艺</td></tr>
+<tr><td>私域引流</td><td>待对照标注</td></tr>
+</tbody>
+</table>
+<div class="tip-box">
+<b>💡 Q3 应用：</b>H2 将"直播预约"型 CTA 用在大场前 3-7 天的内容上，<b>与动作⑤的三段式蓄水节奏直接绑定</b>——形成"种草→蓄水→爆破"完整链路。
+</div>
+</div>
+
+<!-- ============= 动作 ⑧ · 续 · 角度 6-7 ============= -->
+<div class="page">
+<div class="section-tag">2.2 · 动作 ⑧ · 续</div>
+<div class="title">🔁 内容拆解 · 角度 6-7</div>
+
+<div class="h3">角度 6 · 评论区情绪 + 二创情况</div>
+<table>
+<thead><tr><th>观测维度</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>评论区 TOP 高频词</td><td>识别用户对内容的真实反馈与心智落地词</td></tr>
+<tr><td>用户自发二创</td><td>判断内容是否激发了 UGC 传播链</td></tr>
+<tr><td>"求购"等高意向评论</td><td>识别真正进入购买决策的潜在用户密度</td></tr>
+</tbody>
+</table>
+<div class="warn-box">
+此部分数据如翼后台不可见，需<b>客户运营同事配合拉取视频号原生评论数据</b>——是 Q3 月度复盘机制需新建立的协作环节。
+</div>
+
+<div class="h3" style="margin-top: 24px;">角度 7 · 用如翼做"爆款内容反推人群"</div>
+<div class="insight-box">
+<div class="insight-title">🌟 这是 Q3 价值最大的动作 · 内容方法论闭环回到如翼</div>
+<div class="insight-content">
+将 TOP10 视频按内容形态簇分组后，用 AI 智选反向验证"哪种内容形态打到了哪类人群"——把内容创意决策从"达人粉丝量驱动"升级为"<b>内容形态 × 人群画像</b>"双维度决策。
+</div>
+</div>
+
+<table>
+<thead><tr><th>步骤</th><th>操作</th></tr></thead>
+<tbody>
+<tr><td><b>① 内容形态簇分组</b></td><td>TOP10 视频按"剧情型 / 口播型 / vlog 型 / 对谈型"分 4 组</td></tr>
+<tr><td><b>② 每簇启动 AI 智选</b></td><td>brief 用该内容簇的核心场景描述（而非达人本身）</td></tr>
+<tr><td><b>③ 水晶球验证</b></td><td>看"商品偏好 / 品牌共鸣"维度，验证每种内容形态打中了哪类人群</td></tr>
+<tr><td><b>④ Q3 选号逻辑升级</b></td><td>按"内容形态适配的人群画像"匹配达人，不按"达人粉丝量"匹配</td></tr>
+</tbody>
+</table>
+
+<div class="insight-box" style="margin-top: 24px;">
+<div class="insight-title">⚡ 动作 ⑦ × 动作 ⑧ 的方法论闭环</div>
+<div class="insight-content">
+<b>动作 ⑦</b>：从已合作达人 → 水晶球 → 反推未合作达人候选清单（<b>选谁</b>）<br>
+<b>动作 ⑧</b>：从已合作内容 → 水晶球 → 反推内容形态适配人群（<b>怎么拍</b>）<br>
+两者交叉 → Q3 可形成 <span class="highlight">"达人 × 内容形态 × 人群画像"三维决策矩阵</span>——这是万益蓝在膳食赛道领先一步的核心方法论资产。
+</div>
+</div>
+</div>
+
+<!-- ============= 封底 ============= -->
+<div class="page" style="background: linear-gradient(135deg, #1a3a6c 0%, #2e5a9c 100%); color: white; text-align: center; padding: 32px 50px;">
+<div style="font-size: 12px; opacity: 0.8; letter-spacing: 4px; margin-bottom: 10px;">THANK YOU</div>
+<div style="margin-top: 14px; font-size: 12px; opacity: 0.7;">
+万益蓝 × 腾讯营销服务团队 · 2026/06/30 ｜
+文档版本：v2.0 ｜ 编制：Carmen × 腾讯营销协同
+</div>
+</div>
+
+</div><!-- /doc-wrap -->
+
+</body>
+</html>
